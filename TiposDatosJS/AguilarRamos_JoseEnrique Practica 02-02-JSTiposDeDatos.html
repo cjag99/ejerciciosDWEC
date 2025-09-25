@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 02-02: Tipos de datos</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body onload="mostrarDatos()">
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">25/09/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1>Práctica 02-02: Tipos de datos en JS</h1>
+      <br />
+      <ol>
+        <li>
+          ¿Qué etiqueta se utiliza para insertar código JavaScript en HTML?
+        </li>
+        <p>La etiqueta script.</p>
+        <li>
+          ¿Qué ventajas tiene incrustar el código JavaScript en un archivo
+          externo?
+        </li>
+        <p>El poder separar el código funcional de la estructura de la web.</p>
+        <li>
+          ¿Qué extensión suelen tener los archivos que contienen código
+          JavaScript?
+        </li>
+        <p>La extensión .js.</p>
+        <li>¿Cómo se referencia un archivo .js en HTML?</li>
+        <p>
+          Indicando la ruta del archivo, ya sea mediante la ruta absoluta o la
+          relativa.
+        </p>
+        <li>
+          ¿Qué debe hacer si el archivo JavaScript se encuentra en otro
+          directorio?
+        </li>
+        <p>Usar la ruta absoluta.</p>
+        <li>
+          ¿Qué etiqueta se usa para mostrar un mensaje si el navegador no
+          soporta JavaScript?
+        </li>
+        <p>La etiqueta &lt;noscript&gt;.</p>
+        <li>¿Qué diferencia hay al insertar JavaScript en XHTML?</li>
+        <p>
+          Tienes que encapsular el código JavaScript en una etiqueta CDATA
+          porque XML es intolerantes a los elementos que no comienzan por &lt; y
+          a las entidades HTML que no comienzan por &.
+        </p>
+        <li>¿Qué es la ofuscación de código y por qué se utiliza?</li>
+        <p>
+          Es una técnica para hacer menos legible el código. Se usa porque el
+          código JavaScript es visible para todo el mundo y, por tanto
+          susceptible de ser robado.
+        </p>
+        <li>¿Cómo se llama el lenguaje que se menciona en el texto?</li>
+        <p>JavaScript.</p>
+        <li>¿Qué nombre le dio Microsoft a JavaScript?</li>
+        <p>JScript.</p>
+        <li>¿Por qué Microsoft usó el nombre Jscript?</li>
+        <p>
+          Para evitar problemas relacionados con la marca (ni tenían derechos
+          sobre el nombre JavaScript, y podrían tener problemas por la parte de
+          "Java").
+        </p>
+        <li>¿Qué problema surgió con la versión de JScript de Microsoft?</li>
+        <p>
+          Su versión de JScript tenía incompatibilidades en varios navegadores.
+        </p>
+        <li>¿Qué es el DOM y por qué fue diseñado?</li>
+        <p>
+          El DOM (Modelo de Objetos del Documento) es una representación
+          estructurada de un documento HTML o XML que permite a los lenguajes de
+          programación (como JavaScript) acceder y manipular el contenido, la
+          estructura y el estilo del documento, y fue creado por el W3C
+          justamente para evitar las incompatibilidades que tenía JScript entre
+          navegadores.
+        </p>
+        <li>¿Qué navegadores incorporaron el DOM desde su primera versión?</li>
+        <p>
+          Internet Explorer 6, Netscape Navigator, Opera 7 y Mozilla Firefox.
+        </p>
+        <li>¿Qué estándar regula el lenguaje JavaScript desde 1997?</li>
+        <p>El estándar ECMA.</p>
+        <li>¿Qué documento detalla las especificaciones del estándar ECMA?</li>
+        <p>El documento ECMA-262.</p>
+        <li>¿Qué relación tiene JavaScript con Java?</li>
+        <p>
+          No tienen relación alguna, pese a que JavaScript adopte nombres y
+          convenciones similares.
+        </p>
+        <li>¿Quién desarrolló originalmente JavaScript y con qué nombre?</li>
+        <p>
+          JavaScript fue originalmente desarrollado por Brendan Eich, de
+          Netscape, con el nombre de Mocha.
+        </p>
+        <li>Usa la función alert para enseñar el mensaje Hola Mundo</li>
+        <button onclick="holaMundo()">Mostrar Hola mundo</button>
+        <li>En el un archivo y declara varias variables en una sola linea</li>
+        <img src="./variables.png" alt="Variables en misma línea" />
+        <li>
+          ¿Que caracteres y nombres están prohibidos como nombre de variables?
+        </li>
+        <p>
+          No podremos usar palabras reservadas, ni símbolos de puntuación en el
+          medio de la variable, ni la variable podrá contener espacios en
+          blanco.
+        </p>
+        <li>
+          Crea un ejemplo para cada tipos de datos (Crea una tabla en html5 en
+          el documento html)
+        </li>
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de dato</th>
+              <th>Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody id="tabla"></tbody>
+        </table>
+        <li>Usa la función typeof para mostrar el tipo de los códigos</li>
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de dato</th>
+              <th>Typeof</th>
+            </tr>
+          </thead>
+          <tbody id="tabla2"></tbody>
+        </table>
+        <li>Ejecuta estos datos y muestralos en un documento html</li>
+        <ul id="respuesta24">
+          <li>4+4 = <span id="res1"></span></li>
+          <li>"4"+4 = <span id="res2"></span></li>
+          <li>a+c = <span id="res3"></span></li>
+          <li>b+c = <span id="res4"></span></li>
+          <li>2.9e3 +1 = <span id="res5"></span></li>
+          <li>2.9e3 +b = <span id="res6"></span></li>
+          <li>2.9e3+a = <span id="res7"></span></li>
+        </ul>
+        <li>
+          Usa la función parseFloat y parseInt para convertir explícitamente los
+          valores 2.9e3, 30.1e-3, 0,000000004 , 0,6, 3000000 , 301231000
+        </li>
+        <ul>
+          <li>2.9e3 <span id="res01"></span></li>
+          <li>30.1e-3 <span id="res02"></span></li>
+          <li>0,000000004 <span id="res03"></span></li>
+          <li>0,6 <span id="res04"></span></li>
+          <li>3000000 <span id="res05"></span></li>
+          <li>301231000 <span id="res06"></span></li>
+        </ul>
+        <li>
+          usa la función length para hallar el tamaño de las cadenas "123456"
+        </li>
+        <p>
+          La longitud de la cadena "123456" es de
+          <span id="respuesta"></span> caracteres
+        </p>
+        <li>
+          Declara varias variables con const e intenta cambiarlas y visualizalas
+          con un alert que pasa?
+        </li>
+        <button onclick="mostrarConst()">Mostrar const</button>
+        <li>
+          Declara varias variables con var dentro de un bloque if al principio e
+          intenta acceder a ellas para mostrarlas dentro del bloque y fuera del
+          bloque con un alert que pasa?
+        </li>
+        <button onclick="alert(ejemplo4 + '\n' + ejemplo5 + '\n' +ejemplo6)">
+          Mostrar var dentro de if
+        </button>
+        <button onclick="mostrarVars()">Mostrar var fuera de if</button>
+        <li>
+          Realiza el mismo ejercicio anterior pero con varias variables con let
+          dentro de un bloque if . Se pueden ver el contenido de las variables.
+        </li>
+        <button onclick="mostrarLet()">Mostrar let dentro de if</button>
+        <button onclick="mostrarLet2()">Mostrar let fuera de if</button>
+      </ol>
+    </div>
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
