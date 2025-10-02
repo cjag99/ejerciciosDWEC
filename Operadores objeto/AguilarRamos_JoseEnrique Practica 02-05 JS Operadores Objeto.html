@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 02-05</title>
+    <style>
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .enunciado {
+        font-weight: bold;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">25/09/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1>Práctica 02-05: Operadores de Objeto JS</h1>
+      <br />
+      <ol>
+        <li class="enunciado">¿Que hace el operador .?</li>
+        <p>Se usa para acceder a propiedades o métodos de un objeto.</p>
+        <li class="enunciado">Ejecuta este código y explicalo</li>
+        <script>
+          var s = new String("rafa");
+          document.write(s + "<br>");
+          var longitud = s.length;
+          document.write(longitud + "<br>");
+          var pos = s.indexOf("fa");
+          document.write(pos);
+        </script>
+        <p>
+          Se instancia un String con la cadena "Rafa", se imprime por pantalla,
+          se calcula la longitud de la cadena y se imprime por pantalla; y por
+          último se calcula la posición del primer caracter de la cadena "fa" en
+          "rafa" y también se imprime por pantalla.
+        </p>
+        <li class="enunciado">¿Que hace el operador [ ]?</li>
+        <p>Se usa para:</p>
+        <ul>
+          <li>Acceder a elementos de un array</li>
+          <li>
+            Acceder a propiedades de un objeto mediante notación por corchetes
+          </li>
+          <li>Crear arreglos o claves dinámicamente</li>
+        </ul>
+        <li class="enunciado">Ejecuta estos códigos y explica que hacen</li>
+        <script>
+          var arraya = ["Santiago", "Coruña", "Lugo"];
+          var arrayb = { elem1: "Santiago", elem2: "Coruña", elem3: "Lugo" };
+          document.write(arraya[1] + "<br>");
+          document.write(arrayb["elem3"]);
+        </script>
+        <p>
+          Se instancia un array con 3 elementos, y se imprime por pantalla el
+          elemento en la posición 1; y se instancia otro array con 3
+          propiedades, y se imprime por pantalla la propiedad "elem3"
+        </p>
+        <li class="enunciado">¿Que hace el operador { }?</li>
+        <p>Se usa para:</p>
+        <ul>
+          <li>Definir objetos literales</li>
+          <li>Crear bloques de código</li>
+        </ul>
+        <li class="enunciado">¿Que hace el operador Delete?</li>
+        <p>
+          Se usa para eliminar propiedades de un objeto o elementos de un array
+          (no es literalmente así, simplemente establece ese elemento como
+          undefined)
+        </p>
+        <li class="enunciado">
+          Crea un ejemplo de delete para eliminar la propiedad elem3
+        </li>
+        <script>
+          document.write("Array original: " + JSON.stringify(arrayb) + "<br>");
+          delete arrayb["elem3"];
+          document.write(
+            "Array tras emplear el delete:" + JSON.stringify(arrayb)
+          );
+        </script>
+        <li class="enunciado">¿Que hace el operador de escape \ ?</li>
+        <p>
+          El carácter \ actúa como escape, cambia el significado del carácter
+          que lo sigue.
+        </p>
+        <li class="enunciado">
+          Crea un ejemplo para escribir la cadena literal “&lt;el pajarito
+          “pedro” comia “grillos”&gt;”
+        </li>
+        <script>
+          document.write('\<"El pajarito "pedro" comía "grillos"\><br>');
+        </script>
+        <li class="enunciado">¿Que hace el operador instanceof?</li>
+        <p>
+          Sirve para comprobar si un objeto es instancia de una clase o de un
+          constructor.
+        </p>
+        <li class="enunciado">
+          Ejecuta el codigo:<br />a = new Array(1,2,3);<br />
+          a instanceof Array; // devolverá true.
+        </li>
+        <script>
+          a = new Array(1, 2, 3);
+          document.write(a instanceof Array); // devolverá true.
+        </script>
+        <li class="enunciado">¿Que hace el operador coma?</li>
+        <p>Se usa para:</p>
+        <ul>
+          <li>
+            Separar elementos en listas: arrays, objetos, argumentos de
+            funciones.
+          </li>
+          <li>
+            En expresiones, evalúa múltiples expresiones y retorna la última.
+          </li>
+        </ul>
+        <li class="enunciado">
+          Ejecuta este codigo<br />
+          var nombre="juan", direccion="C\ pepep,1", apellidos="lopez Abad",
+          edad="30";<br />
+          Document.write( nombre + "," + apellidos + "," + direccion + "," +
+          edad );
+        </li>
+        <script>
+          var nombre = "juan",
+            direccion = "C\ pepep,1",
+            apellidos = "lopez Abad",
+            edad = "30";
+          document.write(
+            nombre + "," + apellidos + "," + direccion + "," + edad
+          );
+        </script>
+        <li class="enunciado">¿Que hace el operador :?</li>
+        <p>Se usa principalmente en:</p>
+        <ul>
+          <li>Objetos literales → para asignar valores a propiedades.</li>
+          <li>En estructuras como switch.</li>
+        </ul>
+        <li class="enunciado">
+          Ejecuta este codigo<br />
+          var a =10;<br />
+          var b = 15;<br />
+          var opcion= b>a ? "B es mayor que A": "A es mayor que B";<br />
+          document.write( "opcion "+opcion);
+        </li>
+        <script>
+          var a = 10;
+          var b = 15;
+          var opcion = b > a ? "B es mayor que A" : "A es mayor que B";
+          document.write("opcion " + opcion);
+        </script>
+        <li class="enunciado">
+          Ejecuta este codigo<br />
+          var a =confirm("Estas de Acuerdo");<br />
+          var opcion= a ? "Acuerdo": "En Desacuerdo";<br />
+          document.write( "opcion "+opcion);
+        </li>
+        <script>
+          var a = confirm("Estas de Acuerdo");
+          var opcion = a ? "Acuerdo" : "En Desacuerdo";
+          document.write("opcion " + opcion);
+        </script>
+        <li class="enunciado">¿Que hace el operador typeof?</li>
+        <p>Sirve para conocer el tipo de dato primitivo de una variable.</p>
+        <li class="enunciado">
+          Ejecuta este codigo<br />
+          var a ="hola" , b=34, c=3.1e3 d = 34;<br />
+          var at =typeof(a) ;<br />
+          var bt =typeof(b) ;<br />
+          var ct =typeof(c) ;<br />
+          document.write( " tipo de "+ a: + " es "+at);<br />
+          document.write( " tipo de "+b: + " es "+bt);<br />
+          document.write( " tipo de "+ c: + " es "+ct);
+        </li>
+        <script>
+          var a = "hola",
+            b = 34,
+            c = 3.1e3,
+            d = 34;
+          var at = typeof a;
+          var bt = typeof b;
+          var ct = typeof c;
+          document.write(" tipo de " + a + " es " + at + "<br>");
+          document.write(" tipo de " + b + " es " + bt + "<br>");
+          document.write(" tipo de " + c + " es " + ct);
+        </script>
+      </ol>
+    </div>
+  </body>
+</html>
