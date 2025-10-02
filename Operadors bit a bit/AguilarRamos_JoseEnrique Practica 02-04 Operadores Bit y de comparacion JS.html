@@ -61,113 +61,406 @@
           <tr>
             <td>=</td>
             <td>Asignación</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a=b</td>
+            <td>Asignar valor b a a</td>
+            <td>a = 5</td>
           </tr>
           <tr>
             <td>+=</td>
             <td>Sumar un valor</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a+=b</td>
+            <td>a= a + b</td>
+            <td>a+=3</td>
           </tr>
           <tr>
             <td>-=</td>
             <td>Restar un valor</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a-=b</td>
+            <td>a= a - b</td>
+            <td>a-= 2</td>
           </tr>
           <tr>
             <td>*=</td>
             <td>Multiplicar un valor</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a*=b</td>
+            <td>a= a * b</td>
+            <td>a*=4</td>
           </tr>
           <tr>
             <td>/=</td>
             <td>Dividir un valor</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a/=b</td>
+            <td>a = a / b</td>
+            <td>a/=2</td>
           </tr>
           <tr>
             <td>%=</td>
             <td>Módulo de un valor</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a%=b</td>
+            <td>a = a % b</td>
+            <td>a %= 3</td>
           </tr>
           <tr>
             <td>&lt;&lt;=</td>
             <td>Desplazar bits a la izquierda</td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>&gt;=</td>
-            <td>Desplazar bits a la derecha</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a &lt;&lt;=b</td>
+            <td>a = a &lt;&lt; b</td>
+            <td>a &lt;&lt;=1</td>
           </tr>
           <tr>
             <td>&gt;&gt;=</td>
             <td>Desplazar bits a la derecha rellenado con 0</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a &gt;&gt;=b</td>
+            <td>a = a &gt;&gt;b</td>
+            <td>a &gt;&gt;=1</td>
           </tr>
           <tr>
             <td>&gt;&gt;&gt;=</td>
             <td>Desplazar bits a la derecha</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a &gt;&gt;&gt;=b</td>
+            <td>a = a &gt;&gt;&gt;b</td>
+            <td>a &gt;&gt;&gt;=1</td>
           </tr>
           <tr>
             <td>&=</td>
             <td>Operación AND bit a bit</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a &=b</td>
+            <td>a = a & b</td>
+            <td>a &= 9</td>
           </tr>
           <tr>
             <td>|=</td>
             <td>Operación OR bit a bit</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a |= b</td>
+            <td>a = a | b</td>
+            <td>a |= 1</td>
           </tr>
           <tr>
             <td>^=</td>
             <td>Operación XOR bit a bit</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>a^=b</td>
+            <td>a = a ^ b</td>
+            <td>a^= 2</td>
           </tr>
           <tr>
             <td>[]=</td>
             <td>Desestructurando asignaciones</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>[a,b] = [c,d]</td>
+            <td>a = c, b= d</td>
+            <td>[a,b] = ["1", "2"]</td>
           </tr>
         </table>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
-        <li class="enunciado"></li>
+        <li class="enunciado">
+          Crea un ejemplo para cada asignación y muestralo con
+          document.write(“”) console o con el alert
+        </li>
+        <script>
+          var a = 5;
+          document.write("Valor inicial de a: " + a + "<br>");
+          a += 3;
+          document.write("Después de a += 3: " + a + "<br>");
+          a -= 2;
+          document.write("Después de a -= 2: " + a + "<br>");
+          a *= 4;
+          document.write("Después de a *= 4: " + a + "<br>");
+          a /= 2;
+          document.write("Después de a /= 2: " + a + "<br>");
+          a %= 3;
+          document.write("Después de a %= 3: " + a + "<br>");
+          a <<= 1;
+          document.write("Después de a <<= 1: " + a + "<br>");
+          a >>= 1;
+          document.write("Después de a >>= 1: " + a + "<br>");
+          a >>>= 1;
+          document.write("Después de a >>>= 1: " + a + "<br>");
+          a &= 9;
+          document.write("Después de a &= 9: " + a + "<br>");
+          a |= 1;
+          document.write("Después de a |= 1: " + a + "<br>");
+          a ^= 2;
+          document.write("Después de a ^= 2: " + a + "<br>");
+          var [b, c] = [1, 2];
+          document.write(
+            "Valores después de desestructuración: b = " +
+              b +
+              ", c = " +
+              c +
+              "<br>"
+          );
+        </script>
+        <li class="enunciado">Rellena el siguiente tabla y creala con html5</li>
+        <table>
+          <tr>
+            <th>Sintáxis</th>
+            <th>Nombre</th>
+            <th>Ejemplo</th>
+          </tr>
+          <tr>
+            <td>&&</td>
+            <td>AND lógico</td>
+            <td>true && false</td>
+          </tr>
+          <tr>
+            <td>||</td>
+            <td>OR logico</td>
+            <td>true || false</td>
+          </tr>
+          <tr>
+            <td>!</td>
+            <td>NOT logico</td>
+            <td>!true</td>
+          </tr>
+        </table>
+        <li class="enunciado">
+          Rellena las tablas de verdad del operador AND y creala con html5
+        </li>
+        <table>
+          <tr>
+            <th>A</th>
+            <th>Op</th>
+            <th>B</th>
+            <th>Resultado</th>
+          </tr>
+          <tr>
+            <td>TRUE</td>
+            <td>&&</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+          </tr>
+          <tr>
+            <td>TRUE</td>
+            <td>&&</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+          </tr>
+          <tr>
+            <td>FALSE</td>
+            <td>&&</td>
+            <td>TRUE</td>
+            <td>FALSE</td>
+          </tr>
+          <tr>
+            <td>FALSE</td>
+            <td>&&</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+          </tr>
+        </table>
+        <li class="enunciado">
+          Rellena las tablas de verdad del operador OR y creala con html5
+        </li>
+        <table>
+          <tr>
+            <th>A</th>
+            <th>Op</th>
+            <th>B</th>
+            <th>Resultado</th>
+          </tr>
+          <tr>
+            <td>TRUE</td>
+            <td>||</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+          </tr>
+          <tr>
+            <td>TRUE</td>
+            <td>||</td>
+            <td>FALSE</td>
+            <td>TRUE</td>
+          </tr>
+          <tr>
+            <td>FALSE</td>
+            <td>||</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+          </tr>
+          <tr>
+            <td>FALSE</td>
+            <td>||</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+          </tr>
+        </table>
+        <li class="enunciado">
+          Crea un ejemplo para cada operador booleano y muestra lo con
+          document.write
+        </li>
+        <script>
+          document.write("Ejemplos de operadores booleanos:<br>");
+          document.write("true && false = " + (true && false) + "<br>");
+          document.write("true || false = " + (true || false) + "<br>");
+          document.write("!true = " + !true + "<br>");
+        </script>
+        <li class="enunciado">
+          Crea un ejemplo combinando con paréntesis con cada uno de los
+          operadores booleanos y muestra lo con document.write
+        </li>
+        <script>
+          document.write("Ejemplos combinando operadores booleanos:<br>");
+          document.write(
+            "(true && false) || (false || true) = " +
+              ((true && false) || false || true) +
+              "<br>"
+          );
+          document.write(
+            "!(true && (false || true)) = " +
+              !(true && (false || true)) +
+              "<br>"
+          );
+          document.write(
+            "((true || false) && !false) = " +
+              ((true || false) && !false) +
+              "<br>"
+          );
+        </script>
+        <li class="enunciado">
+          En que consiste los Operadores bit a bit.? son muy usados?
+        </li>
+        <p>
+          Los operadores bit a bit son operadores que trabajan a nivel de bits
+          individuales dentro de los números enteros. Estos operadores realizan
+          operaciones lógicas directamente sobre los bits que componen los
+          números, en lugar de trabajar con los valores numéricos compvaros. Los
+          operadores bit a bit son menos comunes en el desarrollo web cotidiano,
+          pero pueden ser útiles en situaciones específicas, como manipulación
+          de datos binarios, gráficos, criptografía y optimización de
+          rendimiento en ciertos algoritmos.
+        </p>
+        <li class="enunciado">En que formatos se puede usar?</li>
+        <p>
+          Los operadores bit a bit se pueden usar principalmente con números
+          enteros (tanto positivos como negativos) en JavaScript. Cuando se
+          aplican a otros tipos de datos, como cadenas o booleanos, JavaScript
+          los convierte automáticamente a enteros antes de realizar la
+          operación.
+        </p>
+        <li class="enunciado">Rellena las tablas de bits y creala con html5</li>
+        <table>
+          <tr>
+            <th>Operador</th>
+            <th>Nombre</th>
+            <th>Operador izquierdo</th>
+            <th>Operador derecho</th>
+            <th>Resultado</th>
+          </tr>
+          <tr>
+            <td>&</td>
+            <td>AND</td>
+            <td>00001000</td>
+            <td>00001100</td>
+            <td>00001000</td>
+          </tr>
+          <tr>
+            <td>|</td>
+            <td>OR</td>
+            <td>00001000</td>
+            <td>00001100</td>
+            <td>00001100</td>
+          </tr>
+          <tr>
+            <td>^</td>
+            <td>XOR</td>
+            <td>00001000</td>
+            <td>00001100</td>
+            <td>00000100</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>NOT</td>
+            <td>00001000</td>
+            <td></td>
+            <td>11110111</td>
+          </tr>
+          <tr>
+            <td>&lt;&lt;</td>
+            <td>Desplazamiento izquierdo</td>
+            <td>0001000</td>
+            <td>&lt;&lt;2</td>
+            <td>0100000</td>
+          </tr>
+          <tr>
+            <td>&gt;&gt;</td>
+            <td>Desplazamiento derecho con signo</td>
+            <td>11000</td>
+            <td>&gt;&gt;2</td>
+            <td>110</td>
+          </tr>
+          <tr>
+            <td>&gt;&gt;&gt;</td>
+            <td>Despalzamiento derecho sun signo</td>
+            <td>11000</td>
+            <td>&gt;&gt;&gt;2</td>
+            <td>00110</td>
+          </tr>
+        </table>
+        <li class="enunciado">
+          Ejecuta este codigo y observa los resultados de los alert
+        </li>
+        <script>
+          var binario = "10010111";
+          var num255 = "11111111";
+          var decimal = parseInt("10010111", 2);
+          document.writeln(
+            "<br>" +
+              "binario" +
+              " binario " +
+              " es " +
+              "decimal " +
+              " en decimal"
+          );
+          var DesplazamientoAND = decimal & 255;
+          var DesplazamientoOR = decimal | 255;
+          var DesplazamientoXOR = decimal ^ decimal;
+          var DesplazamientoNOT = ~decimal;
+          var Desplazamientoizquierda = decimal << 1;
+          var Desplazamientoderecha = decimal >> 1;
+          var Desplazamientoderecha0 = decimal >>> 2;
+          document.writeln("<br>" + "AND " + DesplazamientoAND);
+          document.writeln("<br>" + "OR " + DesplazamientoOR);
+          document.writeln("<br>" + DesplazamientoXOR);
+          document.writeln("<br>" + DesplazamientoNOT);
+          document.writeln("<br>" + Desplazamientoizquierda);
+          document.writeln("<br>" + Desplazamientoderecha);
+          document.writeln("<br>" + Desplazamientoderecha0);
+        </script>
+        <li class="enunciado">
+          Modifica la variable segundoparametroBinario operador para que siempre
+          salga el elemento en comentario y arregla el problema con los var
+        </li>
+        <div id="resultados"></div>
+
+        <script>
+          var segundoparametroBinario = "11111111";
+          var segundoparametro = parseInt(segundoparametroBinario, 2); // 255
+
+          var decimal = 0;
+          var orOperand = 1;
+          var xorOperand = 1;
+          var notOperando = 9; // corregido el nombre
+          var desplazamientoI = 16;
+          var desplazamientoD = 16;
+          var desplazamientoDU = 128;
+
+          var DesplazamientoAND = decimal & segundoparametro; // 0
+          var DesplazamientoOR = decimal | orOperand; // 1
+          var DesplazamientoXOR = decimal ^ xorOperand; // 1
+          var DesplazamientoNOT = ~notOperando; // -10
+          var Desplazamientoizquierda = desplazamientoI << 1; // 32
+          var Desplazamientoderecha = desplazamientoD >> 1; // 8
+          var Desplazamientoderecha0 = desplazamientoDU >>> 2; // 32
+
+          // Usamos innerHTML en vez de writeln para no borrar el HTML
+          var salida = "";
+          salida += "<br>AND = " + DesplazamientoAND;
+          salida += "<br>OR = " + DesplazamientoOR;
+          salida += "<br>XOR = " + DesplazamientoXOR;
+          salida += "<br>NOT = " + DesplazamientoNOT;
+          salida += "<br>Izquierda = " + Desplazamientoizquierda;
+          salida += "<br>Derecha = " + Desplazamientoderecha;
+          salida += "<br>Derecha >>> = " + Desplazamientoderecha0;
+
+          document.getElementById("resultados").innerHTML = salida;
+        </script>
       </ol>
     </div>
   </body>
