@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo bucles</title>
+  </head>
+  <body>
+    <h1>Ejemplo bucles</h1>
+    <ul>
+      <li>
+        Escribir un programa que cree muestre todos los elementos de este array
+        con for of
+      </li>
+      <script>
+        const arr1 = [
+          "Malaga",
+          "Sevilla",
+          "Cordoba",
+          "Huelva",
+          "Cadiz",
+          "Almeria",
+          "Granada",
+        ];
+        document.write("<ol>");
+        for (const ciudad of arr1) {
+          document.write("<li style='color:#00ff00'>" + ciudad + "</li>");
+        }
+        document.write("</ol>");
+      </script>
+      <li>
+        Modifica el anterior para que el verde sea un degradado (000000 va a
+        00ff00)
+      </li>
+      <script>
+        const arr2 = [
+          "#00ff00",
+          "#00AA00",
+          "#009900",
+          "#007700",
+          "#005500",
+          "#002200",
+          "#000000",
+        ];
+        document.write("<ol>");
+        for (i in arr1) {
+          document.write(
+            "<li style='color:" + arr2[i] + "'>" + arr1[i] + "</li>"
+          );
+        }
+        document.write("</ol>");
+      </script>
+      <li>
+        Usa for in para ver todas las asignaturas de este objeto y for of para
+        ver el contenido
+      </li>
+      <script>
+        var Mis_notas = {
+          mates: 9,
+          Lengua: 6,
+          Efisica: 5,
+          Quimica: 9,
+          fisica: 5,
+          ingles: 5,
+        };
+        for (let i in Mis_notas) {
+          document.write(i + ": ");
+          for (let nota of [Mis_notas[i]]) {
+            document.write(nota);
+          }
+          document.write("<br>");
+        }
+      </script>
+      <li>
+        Sea estos dos arrays<br />
+        const arr1 = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz",
+        "Almeria", "Granada" ];<br />
+        const arr2 = ["bonita", "Guapa", " Bella", "Pintoresca", "Hermosa" ];<br />
+        Usa for of doble para combinarlos todos y mostrarlos en una tabla
+      </li>
+      <script>
+        const arr3 = [
+          "Malaga",
+          "Sevilla",
+          "Cordoba",
+          "Huelva",
+          "Cadiz",
+          "Almeria",
+          "Granada",
+        ];
+        const arr4 = ["bonita", "Guapa", " Bella", "Pintoresca", "Hermosa"];
+        document.write("<table border='1'>");
+        document.write("<tr>");
+
+        for (const ciudad of arr3) {
+          document.write("<td>");
+          for (const adjetivo of arr4) {
+            document.write(ciudad + " es: " + adjetivo + "<br>");
+          }
+          document.write("</td>");
+        }
+        document.write("</tr>");
+        document.write("</table>");
+      </script>
+      <li>
+        Crea un script que cree un formulario con tantos botones como haya en el
+        siguiente <br />
+        const arr1 = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz",
+        "Almeria", "Granada" ];<br />
+        ponle esto dentro de cada boton <br />
+        &lt;input type="button" onclick='alert("La ciudad mas bonita es
+        Malaga")' /&gt; <br />
+        <script>
+          const arr5 = [
+            "Malaga",
+            "Sevilla",
+            "Cordoba",
+            "Huelva",
+            "Cadiz",
+            "Almeria",
+            "Granada",
+          ];
+          for (let i of arr5) {
+            document.write(
+              "<button onClick=\"alert('La ciudad más bonita es " +
+                i +
+                "')\">" +
+                i +
+                "</button>"
+            );
+          }
+        </script>
+      </li>
+      <li>
+        Escribe un programa que dibuje la frase "hola que tal" 10 veces cada vez
+        mas pequeña ...
+      </li>
+      <script>
+        for (let i = 0, j = 25; i < 10; i++, j--) {
+          document.write("<p style='font-size:" + j + "px'>Hola que tal</p>");
+        }
+      </script>
+    </ul>
+  </body>
+</html>
