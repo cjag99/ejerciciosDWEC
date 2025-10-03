@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 02-07: Bucles</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">03/10/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <h1 class="titulo">Práctica 02-07: JS Bucles</h1>
+      <br /><br />
+      <ol>
+        <li class="enunciado">
+          Escribir un programa que pida al usuario una palabra y la muestre por
+          pantalla 10 veces con for
+        </li>
+        <button onclick="repetirFor()">Ejecutar código</button>
+        <p id="repetirFor"></p>
+        <li class="enunciado">
+          Escribir un programa que pregunte al usuario su edad y muestre por
+          pantalla todos los años que ha cumplido (desde 1 hasta su edad).
+          (while)
+        </li>
+        <button onclick="mostrarEdad()">Ejecutar código</button>
+        <p id="edad"></p>
+        <li class="enunciado">
+          Escribir un programa que pida al usuario un número entero positivo y
+          muestre por pantalla todos los números impares desde 1 hasta ese
+          número separados por comas.
+        </li>
+        <button onclick="mostrarImpar()">Ejecutar código</button>
+        <p id="impar"></p>
+        <li class="enunciado">
+          Escribir un programa que pida al usuario un número entero positivo y
+          muestre por pantalla la cuenta atrás desde ese número hasta cero
+          separados por comas.
+        </li>
+        <button onclick="cuentaAtras()">Ejecutar código</button>
+        <p id="cuentaAtras"></p>
+        <li class="enunciado">
+          Escribir un programa que pregunte al usuario una cantidad a invertir,
+          el interés anual y el número de años, y muestre por pantalla el
+          capital obtenido en la inversión cada año que dura la inversión.
+        </li>
+        <button onclick="calcularCapital()">Ejecutar código</button>
+        <p id="capital"></p>
+        <li class="enunciado">
+          Escribir un programa que pida al usuario un número entero y muestre
+          por pantalla un triángulo rectángulo como el de más abajo, de altura
+          el número introducido.
+        </li>
+        <button onclick="mostrarTriangulo()">Ejecutar código</button>
+        <p id="triangulo"></p>
+        <li class="enunciado">
+          Escribir un programa que muestre por pantalla la tabla de multiplicar
+          del 1 al 10.
+        </li>
+        <button onclick="mostrarTablas()">Ejecutar código</button>
+        <p id="tablasMultiplicar"></p>
+        <li class="enunciado">
+          Escribir un programa que pida al usuario un número entero y muestre
+          por pantalla un triángulo rectángulo como el de más abajo.
+        </li>
+        <button onclick="trianguloNum()">Ejecutar código</button>
+        <p id="numTriangulo"></p>
+        <li class="enunciado">
+          Escribir un programa que almacene la cadena de caracteres contraseña
+          en una variable, pregunte al usuario por la contraseña hasta que
+          introduzca la contraseña correcta.
+        </li>
+        <button onclick="verificar()">Ejecutar codigo</button>
+        <p id="verificar"></p>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+      </ol>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
