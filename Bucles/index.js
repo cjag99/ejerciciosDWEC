@@ -101,3 +101,115 @@ function verificar() {
     }
   } while (verificado == false);
 }
+function esPrimo() {
+  let num = parseInt(prompt("Introduzca un número natural:"));
+  let esPrimo = true;
+  if (num < 1) {
+    document.getElementById("esPrimo").innerHTML =
+      "Este número no puede ser primo. Debe ser positivo y mayor de 1.";
+  } else {
+    for (let i = 2; i < num; i++) {
+      if (num % i == 0) {
+        esPrimo = false;
+        break;
+      }
+    }
+    if (esPrimo) {
+      document.getElementById("esPrimo").innerHTML =
+        num + " es un número primo.";
+    } else {
+      document.getElementById("esPrimo").innerHTML =
+        num + " no es un número primo.";
+    }
+  }
+}
+function invertirPalabra() {
+  let palabra = prompt("Introduzca una palabra:");
+  if (palabra == "") {
+    document.getElementById("invertirPalabra").innerHTML =
+      "No se pudo invertir, cadena vacía.";
+  } else {
+    for (let i = palabra.length - 1; i >= 0; i--) {
+      document.getElementById("invertirPalabra").innerHTML +=
+        palabra.charAt(i) + " ";
+    }
+  }
+}
+function contarLetra() {
+  let frase = prompt("Introduzca una frase");
+  let letra = prompt("Introduzca una letra:");
+  if (letra.length > 1) {
+    document.getElementById("contarLetra").innerHTML =
+      "ERROR, debe introducir solo una letra, no una cadena de texto";
+  } else if (frase == "") {
+    document.getElementById("contarLetra").innerHTML =
+      "No se puede contar las letras de una cadena vacía";
+  } else {
+    let contador = 0;
+    for (let i = 0; i < frase.length; i++) {
+      if (frase.charAt(i) === letra) {
+        contador++;
+      }
+    }
+    document.getElementById("contarLetra").innerHTML =
+      "En la frase " +
+      frase +
+      " se ha repetido la letra " +
+      letra +
+      " " +
+      contador +
+      " veces.";
+  }
+}
+function replicarTexto() {
+  let mensaje = "";
+  do {
+    mensaje = prompt("Introduzca un mensaje:");
+    document.getElementById("replicarTexto").innerHTML += mensaje + "<br>";
+  } while (mensaje.toLocaleLowerCase() != "salir");
+}
+function calcularInteres() {
+  let credito = parseFloat(
+    prompt("Introduzca cuánto dinero desea pedir en préstamo (€):")
+  );
+  let interesAnual = parseFloat(
+    prompt("Introduzca cuánto es el interés anual (0-1):")
+  );
+  let numAnios = parseInt(
+    prompt("Introduzca en cuántos años desea pagar el préstamo:")
+  );
+
+  let salida = document.getElementById("calcularInteres");
+  salida.innerHTML = "";
+  if (credito <= 0 || interesAnual <= 0 || numAnios < 1) {
+    salida.innerHTML = "ERROR: datos no válidos para calcular un préstamo.";
+    return;
+  }
+
+  let totalPrestamo = (credito * Math.pow(1 + interesAnual, numAnios)).toFixed(
+    2
+  );
+  let cuotaMensual = (totalPrestamo / (numAnios * 12)).toFixed(2);
+  let totalPagado = 0;
+
+  salida.innerHTML += "Total pedido: " + credito + "€<br>";
+  salida.innerHTML += "Interés anual: " + interesAnual + "%<br>";
+  salida.innerHTML += "Años para pagar: " + numAnios + "<br>";
+  salida.innerHTML += "Total a devolver: " + totalPrestamo + "€<br>";
+  salida.innerHTML += "Cuota mensual: " + cuotaMensual + "€<br><br>";
+
+  for (let i = 1; i <= numAnios; i++) {
+    totalPagado += cuotaMensual * 12;
+    let restante = totalPrestamo - totalPagado;
+    if (restante < 0) restante = 0;
+
+    salida.innerHTML +=
+      "Año " +
+      i +
+      ": pagado: " +
+      totalPagado.toFixed(2) +
+      " € — restante: " +
+      restante.toFixed(2) +
+      "€<br>";
+  }
+}
