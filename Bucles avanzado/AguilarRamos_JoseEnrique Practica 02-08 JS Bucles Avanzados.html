@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 02-08: JS Bucles avanzados</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .tablaNombre,
+      .fila,
+      .casilla {
+        border: solid black 1px;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr class="fila">
+            <td class="casilla">
+              Nombre: <span class="datosNombre">José Enrique</span>
+            </td>
+            <td class="casilla">
+              Curso: <span class="datosNombre">2º DAW</span>
+            </td>
+          </tr>
+          <tr class="fila">
+            <td class="casilla">
+              Apellidos: <span class="datosNombre">Aguilar Ramos</span>
+            </td>
+            <td class="casilla">
+              Fecha: <span class="datosNombre">03/10/25</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <h1 class="titulo">Práctica 02-08: JS Bucles avanzados</h1>
+      <ol>
+        <li class="enunciado">
+          Escribir un programa que cree muestre todos los elementos de este
+          array con for of
+        </li>
+        <script>
+          const arr1 = [
+            "Malaga",
+            "Sevilla",
+            "Cordoba",
+            "Huelva",
+            "Cadiz",
+            "Almeria",
+            "Granada",
+          ];
+          document.write("<ol>");
+          for (const ciudad of arr1) {
+            document.write("<li style='color:#00ff00'>" + ciudad + "</li>");
+          }
+          document.write("</ol>");
+        </script>
+        <li class="enunciado">
+          Modifica el anterior para que el verde sea un degradado (000000 va a
+          00ff00)
+        </li>
+        <script>
+          const arr2 = [
+            "#00ff00",
+            "#00AA00",
+            "#009900",
+            "#007700",
+            "#005500",
+            "#002200",
+            "#000000",
+          ];
+          document.write("<ol>");
+          for (i in arr1) {
+            document.write(
+              "<li style='color:" + arr2[i] + "'>" + arr1[i] + "</li>"
+            );
+          }
+          document.write("</ol>");
+        </script>
+        <li class="enunciado">
+          Usa for in para ver todas las asignaturas de este objeto y for of para
+          ver el contenido
+        </li>
+        <script>
+          var Mis_notas = {
+            mates: 9,
+            Lengua: 6,
+            Efisica: 5,
+            Quimica: 9,
+            fisica: 5,
+            ingles: 5,
+          };
+          for (let i in Mis_notas) {
+            document.write(i + ": ");
+            for (let nota of [Mis_notas[i]]) {
+              document.write(nota);
+            }
+            document.write("<br>");
+          }
+        </script>
+        <li class="enunciado">
+          Sea estos dos arrays<br />
+          const arr1 = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz",
+          "Almeria", "Granada" ];<br />
+          const arr2 = ["bonita", "Guapa", " Bella", "Pintoresca", "Hermosa"
+          ];<br />
+          Usa for of doble para combinarlos todos y mostrarlos en una tabla
+        </li>
+        <script>
+          const arr3 = [
+            "Malaga",
+            "Sevilla",
+            "Cordoba",
+            "Huelva",
+            "Cadiz",
+            "Almeria",
+            "Granada",
+          ];
+          const arr4 = ["bonita", "Guapa", " Bella", "Pintoresca", "Hermosa"];
+          document.write("<table border='1'>");
+          document.write("<tr>");
+
+          for (const ciudad of arr3) {
+            document.write("<td>");
+            for (const adjetivo of arr4) {
+              document.write(ciudad + " es: " + adjetivo + "<br>");
+            }
+            document.write("</td>");
+          }
+          document.write("</tr>");
+          document.write("</table>");
+        </script>
+        <li class="enunciado">
+          Crea un script que cree un formulario con tantos botones como haya en
+          el siguiente <br />
+          const arr1 = ["Malaga", "Sevilla", "Cordoba", "Huelva", "Cadiz",
+          "Almeria", "Granada" ];<br />
+          ponle esto dentro de cada boton <br />
+          &lt;input type="button" onclick='alert("La ciudad mas bonita es
+          Malaga")' /&gt; <br />
+          <script>
+            const arr5 = [
+              "Malaga",
+              "Sevilla",
+              "Cordoba",
+              "Huelva",
+              "Cadiz",
+              "Almeria",
+              "Granada",
+            ];
+            for (let i of arr5) {
+              document.write(
+                "<button onClick=\"alert('La ciudad más bonita es " +
+                  i +
+                  "')\">" +
+                  i +
+                  "</button>"
+              );
+            }
+          </script>
+        </li>
+        <li class="enunciado">
+          Escribe un programa que dibuje la frase "hola que tal" 10 veces cada
+          vez mas pequeña ...
+        </li>
+        <script>
+          for (let i = 0, j = 25; i < 10; i++, j--) {
+            document.write("<p style='font-size:" + j + "px'>Hola que tal</p>");
+          }
+        </script>
+        <li class="enunciado">
+          Copia este codigo y ejecutalo modificalo para hacerlo con un while y
+          un do loop
+        </li>
+        <form name="selectForm">
+          <p>
+            <label for="musicTypes"
+              >Elija algunos tipos de música, luego haga clic en el botón de
+              abajo:</label
+            >
+            <select id="musicTypes" name="musicTypes" multiple="multiple">
+              <option selected="selected">R&B</option>
+              <option>Jazz</option>
+              <option>Blues</option>
+              <option>New Age</option>
+              <option>Classical</option>
+              <option>Opera</option>
+            </select>
+          </p>
+          <p>
+            <input
+              id="btn"
+              type="button"
+              value="¿Cuántos están seleccionados?"
+            />
+          </p>
+        </form>
+        <script>
+          function howMany(selectObject) {
+            let numberSelected = 0;
+            let i = 0;
+            do {
+              if (selectObject.options[i].selected) {
+                numberSelected++;
+              }
+              i++;
+            } while (i < selectObject.options.length);
+            return numberSelected;
+          }
+          let btn = document.getElementById("btn");
+          btn.addEventListener("click", function () {
+            alert(
+              "Número de opciones seleccionadas: " +
+                howMany(document.selectForm.musicTypes)
+            );
+          });
+        </script>
+        <li class="enunciado">
+          un bucle para pintar esta figura usando una tabla que ponemos de fondo
+          el color adecuado la tabla debe tener estos valores (pista es un array
+          3x3)
+        </li>
+        <script>
+          const tabla1 = [
+            ["#0000FF", "#00FF00", "#FF0000"],
+            ["#FF0000", "#0000FF", "#00FF00"],
+            ["#00FF00", "#FF0000", "#0000FF"],
+          ];
+          document.writeln(
+            "<table width='500px' height='500px' border='0' cellpadding='0' cellspacing='0'>"
+          );
+          for (let i = 0; i < tabla1.length; i++) {
+            document.write("<tr>");
+            for (let j = 0; j < tabla1[i].length; j++) {
+              document.writeln("<td bgcolor=" + tabla1[i][j] + "></td>");
+            }
+            document.write("</tr>");
+          }
+
+          document.writeln("</table> ");
+        </script>
+        <li class="enunciado">
+          Modifica el anterior para crear esta figura (PISTA: es un array 6x6 y
+          se usan los colores "f0f","ff0", "0ff")
+        </li>
+        <script>
+          const tabla2 = [
+            ["#f0f", "#f0f", "#f0f", "#f0f", "#f0f", "#f0f"],
+            ["#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0"],
+            ["#ff0", "#0ff", "#0ff", "#0ff", "#0ff", "#ff0"],
+            ["#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0"],
+            ["#f0f", "#f0f", "#f0f", "#f0f", "#f0f", "#f0f"],
+          ];
+          document.writeln(
+            "<table width='500px' height='500px' border='0' cellpadding='0' cellspacing='0'>"
+          );
+          for (let i = 0; i < tabla2.length; i++) {
+            document.write("<tr>");
+            for (let j = 0; j < tabla2[i].length; j++) {
+              document.writeln("<td bgcolor=" + tabla2[i][j] + "></td>");
+            }
+            document.write("</tr>");
+          }
+
+          document.writeln("</table> ");
+        </script>
+        <li class="enunciado">
+          Modifica el anterior para crear esta figura (PISTA: es un array 6x8y
+          se usan los colores "f0f","ff0", "0ff")
+        </li>
+        <script>
+          const tabla3 = [
+            ["#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0"],
+            ["#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0"],
+            ["#f0f", "#f0f", "#f0f", "#f0f", "#f0f", "#f0f"],
+            ["#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0"],
+            ["#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0"],
+            ["#ff0", "#ff0", "#f0f", "#f0f", "#ff0", "#ff0"],
+            ["#ff0", "#f0f", "#ff0", "#ff0", "#f0f", "#ff0"],
+            ["#f0f", "#ff0", "#ff0", "#ff0", "#ff0", "#f0f"],
+            ["#f0f", "#ff0", "#ff0", "#ff0", "#ff0", "#f0f"],
+          ];
+          document.writeln(
+            "<table width='500px' height='500px' border='0' cellpadding='0' cellspacing='0'>"
+          );
+          for (let i = 0; i < tabla3.length; i++) {
+            document.write("<tr>");
+            for (let j = 0; j < tabla3[i].length; j++) {
+              document.writeln("<td bgcolor=" + tabla3[i][j] + "></td>");
+            }
+            document.write("</tr>");
+          }
+
+          document.writeln("</table> ");
+        </script>
+      </ol>
+    </div>
+  </body>
+</html>
