@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 03-01: JS String</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">09/10/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1>Práctica 03-01: JS Objeto String</h1>
+      <ol>
+        <li class="enunciado">
+          Toma una entrada con window.prompt() y muestra su tamaño
+        </li>
+        <button onclick="mostrarTamanyo()">Ejecutar código</button>
+        <p id="act1"></p>
+        <li class="enunciado">
+          Toma una entrada con window.prompt() y nos muestre el caracter que
+          esta en la mitad con charAt()
+        </li>
+        <button onclick="caracterMitad()">Ejecutar código</button>
+        <p id="act2"></p>
+        <li class="enunciado">
+          Modifica el anterior para que muestre tambien su codigo Unicode
+        </li>
+        <button onclick="caracterUnicode('act3')">Ejecutar código</button>
+        <p id="act3"></p>
+        <li class="enunciado">
+          Modifica el primero anterior para que muestre tambien su codigo
+          Unicode
+        </li>
+        <button onclick="caracterUnicode('act4')">Ejecutar código</button>
+        <p id="act4"></p>
+        <li class="enunciado">
+          Toma dos entradas con window.prompt() y unelas
+        </li>
+        <button onclick="unirCadenas()">Ejecutar código</button>
+        <p id="act5"></p>
+        <li class="enunciado">
+          Toma una numero (si no es un numero da error) y muestra su carácter
+          unicode asociado. FromCharCode()
+        </li>
+        <button onclick="numToUnicode()">Ejecutar código</button>
+        <p id="act6"></p>
+        <li class="enunciado">
+          Toma dos entradas con window.prompt() y que se busque la primera
+          aparicion de la primera entrada en la segunda con indexOf()
+        </li>
+        <button onclick="buscarCadena()">Ejecutar código</button>
+        <p id="act7"></p>
+        <li class="enunciado">
+          Toma dos entradas con window.prompt() y que se busque la ultima
+          aparición de la primera entrada en la segunda con lastIndexOf()
+        </li>
+        <button onclick="buscarUltimaAparicion()">Ejecutar código</button>
+        <p id="act8"></p>
+        <li class="enunciado">
+          Ejecuta el siguiente codigo y explica que hace la variable expresion y
+          hallado match() Busca una coincidencia entre una expresión regular y
+          una cadena y devuelve las coincidencias o null si no ha encontrado
+          nada.
+        </li>
+        <script>
+          cadena = "<br>Los temas son tema 1, tema 3, tema 5 y tema 6";
+          //expresion = /(capítulo \d+(\.\d)*)/i;
+          expresion = /(tema \d+)/i;
+          hallado = cadena.match(expresion);
+          document.write(cadena + "<br> expresion en " + hallado[1]);
+        </script>
+        <br />
+        <button onclick="compararRegEx()">Ejecutar código</button>
+        <p id="act9"></p>
+        <li class="enunciado">
+          Toma dos entradas con window.prompt() y que se reemplace la primera en
+          la segunda replace()
+        </li>
+        <button onclick="reemplazarCadena()">Ejecutar código</button>
+        <p id="act10"></p>
+        <li class="enunciado">
+          search() Busca una subcadena en la cadena y devuelve la posición dónde
+          se encontró.
+        </li>
+        <button onclick="buscarEnCadena()">Ejecutar código</button>
+        <p id="act11"></p>
+        <li class="enunciado">
+          Toma una entradas con window.prompt() y Extrae (la mitad) de la cadena
+          . slice()
+        </li>
+        <button onclick="cortarCadena()">Ejecutar código</button>
+        <p id="act12"></p>
+        <li class="enunciado">
+          Toma una entradas con window.prompt() Divide una cadena en un array de
+          subcadenas separados por palabras. split()
+        </li>
+        <button onclick="dividirCadena()">Ejecutar código</button>
+        <p id="act13"></p>
+        <li class="enunciado">
+          substr() Extrae los caracteres de una cadena, comenzando en una
+          determinada posición y con el número de caracteres indicado.
+        </li>
+        <button onclick="extraerCadena()">Ejecutar código</button>
+        <p id="act14"></p>
+        <li class="enunciado">
+          substring() Extrae los caracteres de una cadena entre dos índices
+          especificados.
+        </li>
+        <button onclick="substraerCadena()">Ejecutar código</button>
+        <p id="act15"></p>
+        <li class="enunciado">
+          Toma una entrada con window.prompt() y ponlo en en minúsculas Y en
+          mayúsculas con toLowerCase() toUpperCase()
+        </li>
+        <button onclick="toMayusMinus()">Ejecutar código</button>
+        <p id="act16"></p>
+        <li class="enunciado">
+          Modifica el ejercicio 7 con split() para ponerlas en negrita la cadena
+          buscada
+        </li>
+        <button onclick="enNegrita()">Ejecutar código</button>
+        <p id="act17"></p>
+      </ol>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
