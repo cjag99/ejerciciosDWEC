@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 03-01b: String template literals backticks</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">10/10/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="titulo">
+        Práctica 03-01b: String template literals backticks
+      </h1>
+      <ol>
+        <li class="enunciado">
+          Copia el ejemplo1 y modificalo para que tengas tres usuarios distintos
+          (como no hemos visto aun arrays solo crea tres variables distintas)
+        </li>
+        <button onclick="mostrarUsuarios()">Ejecutar código</button>
+        <p id="act1"></p>
+        <li class="enunciado">
+          Formatea una descripción con datos dinámicos Crear un texto
+          descriptivo usando backticks e interpolación, luego usar funciones de
+          String para manipularlo.
+        </li>
+        <button onclick="formatearDescripcion()">Ejecutar código</button>
+        <p id="act2"></p>
+        <li class="enunciado">
+          Construiye una plantilla de correo Crear una plantilla de email
+          personalizada y limpiar texto con métodos de String.
+        </li>
+        <button onclick="crearPlantillaEmail()">Ejecutar código</button>
+        <p id="act3"></p>
+        <li class="enunciado">
+          Genera una tabla de datos en HTML. Usar template literals y métodos de
+          cadena para generar un bloque HTML limpio.
+        </li>
+        <button onclick="generarLista()">Ejecutar código</button>
+        <p id="act4"></p>
+        <li class="enunciado">
+          Análisis de texto dinámico. Analizar un texto generado con template
+          literals y aplicar varias funciones de String.
+        </li>
+        <button onclick="analizarTexto()">Ejecutar código</button>
+        <p id="act5"></p>
+        <li class="enunciado">
+          Plantilla de perfil resumido. Generar un resumen de usuario y recortar
+          texto si es demasiado largo.
+        </li>
+        <button onclick="generarPerfil()">Ejecutar código</button>
+        <p id="act6"></p>
+      </ol>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
