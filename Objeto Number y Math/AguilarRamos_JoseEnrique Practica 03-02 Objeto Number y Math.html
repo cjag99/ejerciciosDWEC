@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 03-02: Objeto Number y Math</title>
+    <style>
+      .enunciado,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">10/10/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="titulo">Práctica 03-02: Objetos Number y Math</h1>
+      <ol>
+        <li class="enunciado">
+          Toma una entrada con window.prompt() y que nos pida la un radio y
+          debemos calcular la circunferencia (2*PI*Radio) y el area ( PI*Radio
+          ^2 )
+        </li>
+        <button onclick="datoCirculo()">Ejecutar código</button>
+        <p id="act1"></p>
+        <li class="enunciado">
+          Toma dos entradas con window.prompt() y que nos pida los dos catetos y
+          debemos calcular la hipotenusa
+        </li>
+        <button onclick="calcularHipotenusa()">Ejecutar código</button>
+        <p id="act2"></p>
+        <li class="enunciado">
+          Haz un script que nos muestre los siguientes constantes
+        </li>
+        <button onclick="mostrarConstantes()">Ejecutar código</button>
+        <p id="act3"></p>
+        <li class="enunciado">
+          Toma una entrada con window.prompt() y que nos pida un numero y
+          debemos calcular los siguientes valores:
+        </li>
+        <ul>
+          <li>logaritmo neperiano del valor</li>
+          <li>logaritmo base 2 del valor</li>
+          <li>logaritmo base 10 del valor</li>
+        </ul>
+        <button onclick="calcularLogaritmos()">Ejecutar código</button>
+        <p id="act4"></p>
+        <li class="enunciado">
+          Toma como entrada un angulo entre 0 y 360 con window.prompt() y nos la
+          debe convertir en radianes ( radianes = (grados/180)*PI ) debe tener
+          un if para que su valor este entre 0 y 360 en caso contrario debe dar
+          error.
+        </li>
+        <button onclick="anguloToRadianes()">Ejecutar código</button>
+        <p id="act5"></p>
+        <li class="enunciado">
+          Modifica el anterior script para muestre los siguientes valores del
+          valor tomado
+        </li>
+        <ol>
+          <li>cos(x) Devuelve el coseno de x (x está en radianes).</li>
+          <li>sin(x) Devuelve el seno de x (x está en radianes).</li>
+          <li>tan(x) Devuelve la tangente de un ángulo.</li>
+        </ol>
+        <button onclick="calcularCosSinTan()">Ejecutar código</button>
+        <p id="act6"></p>
+        <li class="enunciado">
+          Toma una entrada con window.prompt() y debe tener un if para que su
+          valor este entre en el rango (0 y 1) en caso contrario debe dar error
+          y calcule los siguientes valores
+        </li>
+        <ol>
+          <li>acos(x) Devuelve el arcocoseno de x, en radianes.</li>
+          <li>asin(x) Devuelve el arcoseno de x, en radianes.</li>
+          <li>
+            atan(x) Devuelve el arcotangente de x, en radianes con un valor
+            entre -PI/2 y PI/2.
+          </li>
+        </ol>
+        <button onclick="calcularArcCosSinTan()">Ejecutar código</button>
+        <p id="act7"></p>
+        <li class="enunciado">
+          Toma un numero con window.prompt() y debe tener un if para que sea un
+          numero y que calcule su techo, suelo y redondeo. Ojo para asegurarte
+          que la entrada es un numero debe hacer un parse int y chequear con
+          isNan
+        </li>
+        <button onclick="calcularTechoCieloRedondeo()">Ejecutar código</button>
+        <p id="act8"></p>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+        <li class="enunciado"></li>
+      </ol>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
