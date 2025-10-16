@@ -515,12 +515,75 @@ function calcularAreaVolumen(num) {
 function mostrarPH() {
   let iones;
   let errorFlag = true;
+  let parrafo = document.getElementById("act17");
   do {
     iones = parseFloat(prompt("Introduzca el nº de iones de hidrógeno:"));
-    if (isNaN(iones)) {
-      alert("Debes introducir un número.");
+    if (isNaN(iones) || iones <= 0) {
+      alert("Debes introducir un número positivo.");
     } else {
       errorFlag = false;
     }
   } while (errorFlag);
+
+  let pH = -Math.log10(iones);
+  pH = Math.min(14, Math.max(0, pH));
+  const pHredondeado = Math.round(pH);
+
+  parrafo.innerHTML += `
+    <p>El pH es ${pHredondeado}</p>
+    <label for="phBar">Nivel:</label>
+    <input type="range" id="phBar" min="0" max="14" step="1" list="ticks" value="${pHredondeado}">
+    <div id="phValue">pH ${pHredondeado}</div>
+  `;
+
+  const colores = [
+    "#ff0000",
+    "#ff3300",
+    "#ff6600",
+    "#ff9900",
+    "#ffcc00",
+    "#ffff00",
+    "#ccff00",
+    "#00ff00",
+    "#00ff99",
+    "#00ffff",
+    "#0099ff",
+    "#0066ff",
+    "#0000ff",
+    "#6600ff",
+    "#9900ff",
+  ];
+  const etiquetas = [
+    "Extremadamente ácido",
+    "Muy ácido",
+    "Ácido fuerte",
+    "Ácido moderado",
+    "Ácido suave",
+    "Ligeramente ácido",
+    "Casi neutro",
+    "Neutro",
+    "Ligeramente básico",
+    "Básico suave",
+    "Básico moderado",
+    "Básico fuerte",
+    "Muy básico",
+    "Extremadamente básico",
+    "Máximo alcalino",
+  ];
+
+  const phSlider = document.getElementById("phBar");
+  const phValue = document.getElementById("phValue");
+
+  function actualizarColor(val) {
+    phSlider.style.accentColor = colores[val];
+    phValue.textContent = `pH ${val} (${etiquetas[val]})`;
+    phValue.style.color = colores[val];
+  }
+
+  actualizarColor(pHredondeado);
+
+  phSlider.addEventListener("input", function (e) {
+    const val = parseInt(e.target.value);
+    actualizarColor(val);
+  });
 }
