@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 03-03: Boolean y Date</title>
+    <style>
+      .enunciado,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">16/10/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="titulo">Práctica 03-03: Boolean y Date</h1>
+      <ol>
+        <li class="enunciado">
+          Crea un script que te cree la fecha de hoy a mano
+        </li>
+        <button onclick="mostrarHoy()">Ejecutar código</button>
+        <p id="act1"></p>
+        <li class="enunciado">
+          usa este formato de string para crear una fecha <br />
+          <span>let dia = new Date("11/06/2023");</span>
+        </li>
+        <button onclick="mostrarFechaTxt()">Ejecutar código</button>
+        <p id="act2"></p>
+        <li class="enunciado">
+          Usa este código para hacer la misma función <br />
+          <span>const tiempoTranscurrido = Date.now();</span> <br />
+          <span>const hoy = new Date(tiempoTranscurrido);</span> <br />
+          <span
+            >Calcula los segundos, horas, dias y años que han pasado desde
+            entonces</span
+          >
+        </li>
+        <button onclick="calcularTiempo()">Ejecutar código</button>
+        <p id="act3"></p>
+        <li class="enunciado">
+          Crea un script que te lea tu fecha de nacimiento y te calcule cuantos
+          días llevas vivo. <br />Debes restar las dos fechas en milisegundos y
+          dividir el numero entre (1000*60*60*24) para mostrar las fechas <br />
+          puedes usar la función <br />
+          <code>var fechahoy = ahora2.toLocaleDateString("es-ES");</code>
+        </li>
+        <button onclick="tiempoTranscurrido()">Ejecutar código</button>
+        <p id="act4"></p>
+        <li class="enunciado">
+          Crea un script que te lea tu año de nacimiento y pais y sexo. te
+          calcule cuantos años te quedan para llegar a la edad media de
+          esperanza de vida tu país (debes hacer un if )
+        </li>
+        <button onclick="mostrarTiempoVida()">Ejecutar código</button>
+        <p id="act5"></p>
+        <li class="enunciado">
+          Instala la libreria datejs y ejecuta los siguientes códigos de ejemplo
+          y muestralos mediante un document.write junto con el comentario
+        </li>
+        <button onclick="mostrarEjemplos()">Ejecutar código</button>
+        <p id="act6"></p>
+        <li class="enunciado">
+          utiliza la libreria datejs para calcular las siguientes fechas:
+          <ol>
+            <li>hoy</li>
+            <li>la fecha del próximo lunes</li>
+            <li>hoy a las 23:00</li>
+            <li>hoy dentro de un año</li>
+            <li>Tu cumpleaños este año</li>
+            <li>El primer lunes de mes que viene</li>
+            <li>Preguntar si hoy es viernes</li>
+            <li>Preguntar si hace un mes fue septiembre</li>
+          </ol>
+        </li>
+        <button onclick="calcularDateJS()">Ejecutar código</button>
+        <p id="act7"></p>
+      </ol>
+    </div>
+
+    <script src="./date-es-ES.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
