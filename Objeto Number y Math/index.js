@@ -511,3 +511,16 @@ function calcularAreaVolumen(num) {
       break;
   }
 }
+
+function mostrarPH() {
+  let iones;
+  let errorFlag = true;
+  do {
+    iones = parseFloat(prompt("Introduzca el nº de iones de hidrógeno:"));
+    if (isNaN(iones)) {
+      alert("Debes introducir un número.");
+    } else {
+      errorFlag = false;
+    }
+  } while (errorFlag);
+}
