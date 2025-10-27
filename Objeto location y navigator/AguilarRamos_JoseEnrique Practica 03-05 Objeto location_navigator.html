@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 03-05: JS Objeto Location & Navigator</title>
+  </head>
+  <body>
+    <div class="contenido">
+      <h1 class="titulo">Práctica 03-05: JS Objeto Location & Navigator</h1>
+      <ol>
+        <li>
+          Ejecuta el siguiente codigo y explica La estructura
+          document.getElementById("elementoaCambiar").innerHTML <br />
+          <code>
+            &lt;div id="elementoaCambiar"&gt;&lt;/div&gt; <br />&lt;script
+            &gt;<br />
+            document.getElementById("elementoaCambiar").innerHTML="texto
+            nuevo";<br />
+            &lt;/script&gt;
+          </code>
+        </li>
+        <button onclick="ejemploDOM()">Ejecutar código</button>
+        <div id="elementoaCambiar"></div>
+        <li>
+          Realiza un script que muestre las siguientes propiedades del objeto
+          location <br />
+          <ol>
+            <li>hash</li>
+            <li>host</li>
+            <li>hostname</li>
+            <li>href</li>
+            <li>pathname</li>
+            <li>port</li>
+            <li>protocol</li>
+            <li>search</li>
+          </ol>
+        </li>
+        <button onclick="propiedadesLocation()">Ejecutar código</button>
+        <div id="act2"></div>
+        <li>
+          Ejecuta el siguiente código y explica que hace assign(). <br />
+          <code>
+            &lt;body&gt; <br />&lt;h2&gt;The assign Property of Location
+            Object&lt;/h2&gt;<br />
+            &lt;button onclick="myFunction()"&gt;Load new
+            document&lt;/button&gt;<br />
+            &lt;script&gt; <br />
+            function myFunction() {<br />
+            location.assign("https://www.iesplayamar.es"); <br />
+            } <br />
+            &lt;/script&gt; <br />
+            &lt;/body&gt;
+          </code>
+        </li>
+        <button ondblclick="explicarAssign()">Ejecutar código</button>
+        <div id="act3"></div>
+        <li>
+          Modifica este ejemplo para que cargue el valor que se le pase desde un
+          input text o un prompt
+        </li>
+        <button onclick="assignURL()">Ejecutar código</button>
+        <li>
+          Haz un ejemplo de window.reload() añadiendo un botón al anterior
+          ejercicio
+        </li>
+        <button onclick="reloadPage()">Ejecutar código</button>
+        <li>
+          Haz un ejemplo de window.replace() añadiendo un botón al anterior
+          ejercicio
+        </li>
+        <button onclick="replaceURL()">Ejecutar código</button>
+        <li>Que diferencia hay entre replace y assign ?</li>
+        <p>
+          La diferencia está en que en el método assign se mantiene la página
+          actual en el historial del navegador, lo que permite al usuario volver
+          a ella utilizando el botón "Atrás", cosa que no pasa con replace.
+        </p>
+        <li>
+          Realiza un script que muestre las siguientes propiedades del objeto
+          Navigator <br />
+          <ul>
+            <li>appName</li>
+            <li>appVersion</li>
+            <li>cookiesEnabled</li>
+            <li>platform</li>
+            <li>userAgent</li>
+          </ul>
+        </li>
+        <button onclick="propiedadesNavigator()">Ejecutar código</button>
+        <div id="act8"></div>
+        <li>
+          Copia un script que te cargue las coordenadas usadas por muestre las
+          siguientes propiedades del objeto location
+        </li>
+        <button onclick="ejemploNavigator()">Ejecutar código</button>
+        <li>
+          10. Modifica dicho script con assign para que te cargue el mapa de
+          google maps en un iframe URL De Google : <br />
+          https://www.google.es/maps/@36.643675,-4.4902875,15z
+        </li>
+        <button onclick="insertarMapa()">Ejecutar código</button>
+        <div id="mapa"></div>
+        <li>
+          Modifica dicho script Para poner un boton que aumente o minimice el
+          zoom del iframe modificando el valor de ,15z
+        </li>
+        <button onclick="cambiarZoom()">Ejecutar código</button>
+      </ol>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
