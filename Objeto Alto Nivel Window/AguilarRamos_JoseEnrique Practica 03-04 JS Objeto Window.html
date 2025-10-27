@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 03-04: JS Objeto Window</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">27/10/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="titulo">Práctica 03-04: JS Objeto Window</h1>
+      <ol>
+        <li>
+          Crea un script que lea dos números con prompt y que cree una ventanas
+          nueva con el tamaño indicado. Debes usar: <br />
+          <code
+            >var
+            subVentana=window.open("nueva.html","nueva","height=800,width=600");</code
+          >
+        </li>
+        <button onclick="crearVentana()">Ejecutar código</button>
+        <li>Modifica el script anterior para cerrarla</li>
+        <button onclick="cerrarVentana()">Ejecutar código</button>
+        <li>
+          Modifica el script anterior para comprobar si esta abierta o cerrada
+        </li>
+        <button onclick="comprobarVentana()">Ejecutar código</button>
+        <p id="act3"></p>
+        <li>
+          Crea un script que lea una url con prompt y que la abra en una nueva
+          ventana y que muestre sus siguientes propiedades. <br />
+          <ul type="square">
+            <li>defaultStatus</li>
+            <li>length</li>
+            <li>location</li>
+            <li>name</li>
+          </ul>
+        </li>
+        <button onclick="verLink()">Ejecutar código</button>
+        <li>
+          Muestra una ventana emergente de alerta con el mensaje “ALERTA Te
+          estan Robando el banco” y después Muestra una ventana emergente de
+          alerta con el mensaje “Estas de acuerdo?” y dependiendo de él Escribe
+          de acuerdo o no.
+        </li>
+        <button onclick="alertaBanco()">Ejecutar código</button>
+        <li>
+          Usa este código para crear un ejemplo de clearInterval() Resetea el
+          cronómetro ajustado con setInterval() y setInterval( funcion,
+          milisegundos) <br />
+          <code>
+            &lt;!DOCTYPE html&gt; <br />
+            &lt;html&gt; <br />
+            &lt;body&gt;<br />
+            &lt;script&gt; <br />
+            setInterval(dihola, 500, "valor"); <br />
+            function dihola(valor) { <br />
+            document.write("Hello"); <br />
+            } <br />
+            &lt;/script&gt;<br />
+            &lt;/body&gt; <br />
+            &lt;/html&gt;
+          </code>
+        </li>
+        <button onclick="cronometro()">Ejecutar código</button>
+        <li>Modificalo para que te muestre la hora cada segundo</li>
+        <button onclick="intervaloHora()">Ejecutar código</button>
+        <li>
+          Usa este código para observar el uso De clearInterval y setInterval
+          <br />
+          <code
+            >&lt;!DOCTYPE html&gt; <br />
+            &lt;html&gt; <br />
+            &lt;body&gt; <br />
+            &lt;h1&gt;TheWindow Object&lt;/h1&gt;<br />
+            &lt;h2&gt;The setInterval() and clearInterval() Methods&lt;/h2&gt;
+            <br />
+            &lt;button onclick="stopColor()"&gt;Stop &lt;/button&gt;<br />
+            &lt;button onclick=" iniciarIntervalo()"&gt;Start &lt;/button&gt;<br />
+            &lt;script&gt; <br />
+            function iniciarIntervalo() { <br />
+            myInterval = setInterval(setColor, 500); <br />
+            } <br />
+            iniciarIntervalo(); <br />
+            function setColor() {<br />
+            let x = document.body; <br />
+            if( x.style.backgroundColor == "yellow") { <br />
+            x.style.backgroundColor = "pink" <br />
+            } else { <br />x.style.backgroundColor = "yellow" <br />
+            } x.style.backgroundColor = x.style.backgroundColor == "yellow" ?
+            "pink" : "yellow"; <br />
+            } <br />function stopColor() {<br />
+            clearInterval(myInterval); <br />
+            } <br />
+            &lt;/script&gt;<br />
+            &lt;/body&gt; <br />&lt;/html&gt;</code
+          >
+        </li>
+        <button onclick="verCodigo()">Ejecutar código</button>
+        <li>
+          Modifica este código para que escoja el intervalo de un prompt que
+          sale cuando se le pulsa start.
+        </li>
+        <button onclick="ajustarIntervalo()">Ejecutar código</button>
+        <li>
+          Modifica este código para que escoja el intervalo y los colores de un
+          solo prompt que sale cuando se le pulsa start.
+        </li>
+        <button onclick="ajustarEjemplo()">Ejecutar código</button>
+      </ol>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
