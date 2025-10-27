@@ -171,110 +171,48 @@ document.getElementById("demo").innerHTML =
 </html>`);
   ventana.document.close();
 }
+let lat = 36.643675;
+let lon = -4.4902875;
+let zoom = 15;
 function insertarMapa() {
-  let ventana = window.open("", "navigator", "width=800,height=600");
-  ventana.document.write(`<!DOCTYPE html>
-<html>
-  <body>
-    <h1>The Window Navigator Object</h1>
-    <h2>The Geolocation Property</h2>
-    <p id="demo"></p>
-    <iframe id="mapFrame" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  let mapaURL = `https://www.google.com/maps?q=${lat},${lon}&z=${zoom}&output=embed`;
 
-    <script>
-      try {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-      } catch (e) {
-        document.getElementById("demo").innerHTML =
-          "Geolocation is not supported by this browser.";
-      }
-
-      function showPosition(position) {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        document.getElementById("demo").innerHTML =
-          "Latitude: " + lat + "<br>" + "Longitude: " + lon;
-
-        // Construye la URL de Google Maps con las coordenadas
-        const mapUrl = \`https://www.google.com/maps/@\${lat},\${lon},15z\`;
-
-        // Asigna la URL al iframe
-        document.getElementById("mapFrame").src = mapUrl;
-      }
-
-      function showError(error) {
-        document.getElementById("demo").innerHTML =
-          "Error obteniendo la geolocalización.";
-      }
-    </script>
-  </body>
-</html>`);
-  ventana.document.close();
+  let parrafo = document.getElementById("mapa");
+  parrafo.innerHTML = `
+    <iframe 
+      src="${mapaURL}" 
+      width="600" height="450" style="border:0;" 
+      allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>`;
 }
-function cambiarZoom() {
-  let ventana = window.open("", "navigator", "width=800,height=600");
+function insertarMapaZoom() {
+  let mapaURL = `https://www.google.com/maps?q=${lat},${lon}&z=${zoom}&output=embed`;
 
-  ventana.document.write(`<!DOCTYPE html>
-<html>
-  <body>
-    <h1>The Window Navigator Object</h1>
-    <h2>The Geolocation Property</h2>
-    <p id="demo"></p>
-    <iframe id="mapFrame" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <button onclick="aumentarZoom(1)">+</button>
-    <button onclick="disminuirZoom(1)">-</button>
-
-    <script>
-      // Variables globales dentro de la ventana hija
-      let mapUrl = "";
-      let zoom = 15;
-      let lat = 0;
-      let lon = 0;
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-      } else {
-        document.getElementById("demo").innerHTML =
-          "Geolocation is not supported by this browser.";
-      }
-
-      function showPosition(position) {
-        lat = position.coords.latitude;
-        lon = position.coords.longitude;
-        document.getElementById("demo").innerHTML =
-          "Latitude: " + lat + "<br>Longitude: " + lon;
-
-        // Construye la URL de Google Maps con las coordenadas
-        mapUrl = \`https://www.google.com/maps/@\${lat},\${lon},\${zoom}z\`;
-
-        // Asigna la URL al iframe
-        document.getElementById("mapFrame").src = mapUrl;
-      }
-
-      function showError(error) {
-        document.getElementById("demo").innerHTML =
-          "Error obteniendo la geolocalización.";
-      }
-
-      function actualizarMapa() {
-        mapUrl = \`https://www.google.com/maps/@\${lat},\${lon},\${zoom}z\`;
-        document.getElementById("mapFrame").src = mapUrl;
-      }
-
-      function aumentarZoom(cantidad) {
-        zoom += cantidad;
-        if (zoom > 21) zoom = 21;
-        actualizarMapa();
-      }
-
-      function disminuirZoom(cantidad) {
-        zoom -= cantidad;
-        if (zoom < 3) zoom = 3;
-        actualizarMapa();
-      }
-    <\/script>
-  </body>
-</html>`);
-
-  ventana.document.close();
+  let parrafo = document.getElementById("mapa2");
+  parrafo.innerHTML = `
+    <iframe 
+      src="${mapaURL}" 
+      width="600" height="450" style="border:0;" 
+      allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>`;
+}
+function aumentarZoom(cantidad) {
+  let nuevoZoom = (zoom += cantidad);
+  if (zoom > 21) zoom = 21; // Zoom máximo permitido por Google Maps
+  actualizarMapa(lat, lon, nuevoZoom);
+}
+function disminuirZoom(cantidad) {
+  let nuevoZoom = (zoom -= cantidad);
+  if (zoom < 3) zoom = 3; // Zoom mínimo permitido por Google Maps
+  actualizarMapa(lat, lon, nuevoZoom);
+}
+function actualizarMapa(lat, lon, zoom) {
+  const iframe = document.querySelector("#mapa2 iframe");
+  const nuevoSrc = `https://www.google.com/maps?q=${lat},${lon}&z=${zoom}&output=embed`;
+  iframe.removeAttribute("src");
+  setTimeout(() => {
+    iframe.src = nuevoSrc;
+  }, 100);
 }

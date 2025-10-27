@@ -4,9 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 03-05: JS Objeto Location & Navigator</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">27/10/25</span></td>
+          </tr>
+        </table>
+      </div>
       <h1 class="titulo">Práctica 03-05: JS Objeto Location & Navigator</h1>
       <ol>
         <li>
@@ -105,7 +148,10 @@
           Modifica dicho script Para poner un boton que aumente o minimice el
           zoom del iframe modificando el valor de ,15z
         </li>
-        <button onclick="cambiarZoom()">Ejecutar código</button>
+        <button onclick="insertarMapaZoom()">Ejecutar código</button>
+        <div id="mapa2"></div>
+        <button onclick="aumentarZoom(5)">+</button>
+        <button onclick="disminuirZoom(5)">-</button>
       </ol>
     </div>
     <script src="./index.js"></script>
