@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ejercicio Arrays</h1>
+    <fieldset>
+      <legend>Gestionar Empleados Empresa</legend>
+      <form action="#">
+        <h3>Insertar</h3>
+        <label for="ident">Identificador</label>
+        <input type="text" name="ident" id="ident" required /> <br />
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" required /> <br />
+        <label for="apellido">Apellidos</label>
+        <input type="text" name="apellido" id="apellido" required /> <br />
+        <label for="fecha">Fecha de nacimiento</label>
+        <input type="date" name="fecha" id="fecha" required /> <br />
+        <button type="button" onclick="insertarTrabajador()">
+          Insertar trabajador
+        </button>
+      </form>
+    </fieldset>
+
+    <script>
+      const trabajadores = new Array();
+      function insertarTrabajador() {
+        let id = document.getElementById("ident").value;
+        let nombre = document.getElementById("nombre").value;
+        let apellidos = document.getElementById("apellido").value;
+        let fechaNac = new Date(document.getElementById("fecha").value);
+        let edad = Date.now().getFullYear() - fechaNac.getFullYear();
+        let trabajador = [
+          id,
+          nombre,
+          apellidos,
+          fechaNac.toLocaleString(),
+          edad,
+        ];
+        trabajadores.push(trabajador);
+      }
+    </script>
+  </body>
+</html>

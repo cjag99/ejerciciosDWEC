@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 03-06: JS Objeto Document/Frame</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">30/10/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="titulo">Práctica 03-06: JS Objeto Document/Frame</h1>
+      <ol>
+        <li>
+          Crea un script que te muestre con bucle los siguientes htmlCollections
+          (arrays) ojo algunos podrían fallar ya que están deprectated
+        </li>
+        <button type="button" onclick="mostrarHTMLCollections()">
+          Ejecutar código
+        </button>
+        <p id="act1"></p>
+        <li>Muestra las siguientes Propiedades del objeto Document</li>
+        <button type="button" onclick="mostrarDocumentProperties()">
+          Ejecutar código
+        </button>
+        <p id="act2"></p>
+        <li>
+          Ejecuta el siguiente código para observar como podemos cambiar el
+          titulo de la pagina
+        </li>
+        <button type="button" onclick="cambiarTitulo()">Ejecutar código</button>
+        <li>
+          Modifica el código anterior para sustituir los alert por
+          document.getElementById("idetiqueta").innerHTML =”
+        </li>
+        <button type="button" onclick="modificarTituloInnerHTML()">
+          Ejecutar código
+        </button>
+        <p id="act4"></p>
+        <li>
+          Ejercicio Usa getElementById()para acceder a un elemento identificado
+          por el id escrito entre paréntesis.
+        </li>
+        <button type="button" onclick="ejercicioGetElementById()">
+          Ejecutar código
+        </button>
+        <p id="act5"></p>
+        <li>
+          Ejercicio Usa getElementsByName().InnerElement para acceder a un
+          elemento identificado por el id escrito entre paréntesis.
+        </li>
+        <label for="text1">Introduce tu nombre:</label>
+        <input type="text" name="text" value="" />
+        <br />
+        <label for="text2">Introduce tus apellidos:</label>
+        <input type="text" name="text" value="" />
+        <br />
+        <button type="button" onclick="ejercicioGetElementsByName()">
+          Ejecutar código
+        </button>
+
+        <p id="act6"></p>
+        <li>
+          Ejecuta el siguiente código para ver como se Usa
+          getElementsByTagName().InnerHTML para acceder a un elemento
+          identificado por el id escrito entre paréntesis.
+        </li>
+        <button type="button" onclick="visualizarEnunciados()">
+          Ejecutar código
+        </button>
+        <p id="act7"></p>
+        <li>
+          Modifica el siguiente código para ver el contenido de la etiqueta que
+          se le indique
+        </li>
+        <button type="button" onclick="selectorTag()">Ejecutar código</button>
+        <p id="act8"></p>
+        <li>
+          Modifica el siguiente código para ver el contenido de la etiqueta que
+          se le indique
+        </li>
+        <p>
+          etiqueta1 <input type="text" name="etiqueta1" value="Guadalajara" />
+        </p>
+        <p>etiqueta2 <input type="text" name="etiqueta2" value="Toledo" /></p>
+        <p>etiqueta3 <input type="text" name="etiqueta3" value="Cuenca" /></p>
+        <hr />
+        <p id="explica"></p>
+        <h2 id="elemento"></h2>
+        <button type="button" onclick="tagByNum()">Ejecutar código</button>
+      </ol>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
