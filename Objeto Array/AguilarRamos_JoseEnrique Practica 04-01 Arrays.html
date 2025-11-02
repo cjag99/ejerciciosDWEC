@@ -4,9 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 04-01: JS Arrays</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">31/10/25</span></td>
+          </tr>
+        </table>
+      </div>
       <h1 class="titulo">Práctica 04-01: JS Arrays</h1>
       <ol>
         <li>
@@ -70,7 +113,7 @@
           los trabajadores y los días que le quedan en la empresa considerando
           edad jubilación 67
         </li>
-        <button type="button" onclick="ejercicio9()">Ejecutar código</button>
+        <button type="button"><a href="./act9.html">Ejecutar código</a></button>
       </ol>
     </div>
     <script src="./index.js"></script>

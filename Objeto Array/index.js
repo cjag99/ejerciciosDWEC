@@ -58,12 +58,41 @@ function moda10(array) {
   }
   return moda;
 }
+function ordenarArray(array) {
+  let copiaArray = array.slice();
+  for (let i = 0; i < copiaArray.length; i++) {
+    for (let j = 0; j < copiaArray.length - 1; j++) {
+      if (copiaArray[j + 1] < copiaArray[j]) {
+        let copiaPos = copiaArray[j + 1];
+        copiaArray[j + 1] = copiaArray[j];
+        copiaArray[j] = copiaPos;
+      }
+    }
+  }
+  return copiaArray;
+}
+function getMediana(array) {
+  let ordenado = ordenarArray(array);
+  let mediana = 0;
+  let mitad = Math.floor(ordenado.length / 2);
+
+  if (ordenado.length % 2 == 0) {
+    mediana =
+      (ordenado[ordenado.length / 2 - 1] + ordenado[ordenado.length / 2]) / 2;
+  } else {
+    mediana = ordenado[mitad];
+  }
+  return mediana;
+}
 function ejercicio2() {
   let array = generarArray(50, 10);
   let moda = moda10(array);
+  let mediana = getMediana(array);
   let parrafo = document.getElementById("act2");
   parrafo.innerHTML = "";
-  parrafo.innerHTML += "La moda del array es " + moda;
+  parrafo.innerHTML += array.valueOf();
+  parrafo.innerHTML += "<br>La moda del array es " + moda + "<br>";
+  parrafo.innerHTML += "la mediana del array es " + mediana;
 }
 
 function ejercicio3() {

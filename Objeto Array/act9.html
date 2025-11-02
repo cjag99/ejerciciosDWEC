@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ejercicio Arrays</h1>
+    <fieldset>
+      <legend>Gestionar Empleados Empresa</legend>
+      <form action="#">
+        <h3>Insertar</h3>
+        <label for="ident">Identificador</label>
+        <input type="text" name="ident" id="ident" required /> <br />
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" required /> <br />
+        <label for="apellido">Apellidos</label>
+        <input type="text" name="apellido" id="apellido" required /> <br />
+        <label for="fecha">Fecha de nacimiento</label>
+        <input type="date" name="fecha" id="fecha" required /> <br />
+        <button type="button" onclick="insertarTrabajador()">
+          Insertar trabajador
+        </button>
+        <hr />
+        <h3>Mostrar plantilla</h3>
+        <button type="button" onclick="mostrarPlantilla()">
+          Mostrar todos
+        </button>
+        <p id="mostrarTodos"></p>
+        <hr />
+        <h3>Mostrar Trabajador</h3>
+        <label for="idT">Introduzca el id del trabajador</label>
+        <input type="text" name="idT" id="idT" required />
+        <button type="button" onclick="buscarTrabajador()">
+          Mostrar trabajador
+        </button>
+        <p id="trabajadorId"></p>
+        <hr />
+        <h3>Mostrar años hasta jubilación</h3>
+        <button type="button" onclick="mostrarJubilacion()">
+          Mostrar años
+        </button>
+        <p id="jubilacion"></p>
+      </form>
+    </fieldset>
+
+    <script>
+      const trabajadores = new Array();
+      function insertarTrabajador() {
+        let id = document.getElementById("ident").value;
+        let nombre = document.getElementById("nombre").value;
+        let apellidos = document.getElementById("apellido").value;
+        let fechaValor = document.getElementById("fecha").value;
+        if (!fechaValor) {
+          alert("Introduce una fecha válida");
+          return;
+        }
+        let partes = fechaValor.split("-");
+
+        let fechaNac = new Date(
+          parseInt(partes[0], 10),
+          parseInt(partes[1], 10) - 1,
+          parseInt(partes[2], 10)
+        );
+        let hoy = new Date();
+        let edad = hoy.getFullYear() - fechaNac.getFullYear();
+        let mes = hoy.getMonth() - fechaNac.getMonth();
+        if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+          edad--;
+        }
+        let idDuplicado = false;
+        for (let i = 0; i < trabajadores.length; i++) {
+          if (trabajadores[i].id === id) {
+            idDuplicado = true;
+            break;
+          }
+        }
+        let trabajador = {
+          id: id,
+          nombre: nombre,
+          apellidos: apellidos,
+          fechaNac: fechaNac,
+          edad: edad,
+        };
+        if (trabajador.edad < 18 || idDuplicado) {
+          alert("Error al insertar trabajador");
+        } else {
+          trabajadores.push(trabajador);
+          console.log(trabajadores);
+        }
+      }
+      function mostrarPlantilla() {
+        let parrafo = document.getElementById("mostrarTodos");
+        parrafo.innerHTML = "<ol>";
+
+        for (const trabajador of trabajadores) {
+          parrafo.innerHTML += "<li><ul>";
+
+          for (const clave in trabajador) {
+            let valor = trabajador[clave];
+            if (clave === "fechaNac" && valor instanceof Date) {
+              valor = valor.toLocaleDateString(); // muestra fecha bonita
+            }
+            parrafo.innerHTML += "<li>" + clave + ": " + valor + "</li>";
+          }
+
+          parrafo.innerHTML += "</ul></li>";
+        }
+
+        parrafo.innerHTML += "</ol>";
+      }
+      function mostrarPlantilla() {
+        let parrafo = document.getElementById("mostrarTodos");
+        let html = "<ol>";
+
+        for (const trabajador of trabajadores) {
+          html += "<li><ul>";
+          for (const clave in trabajador) {
+            let valor = trabajador[clave];
+            if (clave === "fechaNac" && valor instanceof Date) {
+              valor = valor.toLocaleDateString();
+            }
+            html += `<li>${clave}: ${valor}</li>`;
+          }
+          html += "</ul></li>";
+        }
+
+        html += "</ol>";
+        parrafo.innerHTML = html;
+      }
+
+      function buscarTrabajador() {
+        let idT = document.getElementById("idT").value;
+        let parrafo = document.getElementById("trabajadorId");
+        parrafo.innerHTML = "";
+        for (const trabajador of trabajadores) {
+          if (idT == trabajador.id) {
+            parrafo.innerHTML +=
+              "Trabajador encontrado <br>" + JSON.stringify(trabajador);
+          } else {
+            parrafo.innerHTML += "No existe ningún trabajador con ese ID";
+          }
+        }
+      }
+      function mostrarJubilacion() {
+        let parrafo = document.getElementById("jubilacion");
+        parrafo.innerHTML = "";
+        for (const trabajador of trabajadores) {
+          if (trabajador.edad < 67) {
+            let fechaJubi = new Date(trabajador.fechaNac);
+            fechaJubi.setFullYear(fechaJubi.getFullYear() + 67);
+            let jubilacion = 67 - trabajador.edad;
+            let fechaNac = new Date(trabajador.fechaNac);
+            let diasExactos = (fechaJubi - fechaNac) / (1000 * 60 * 60 * 24);
+            parrafo.innerHTML +=
+              trabajador.nombre +
+              " " +
+              trabajador.apellidos +
+              ": Le quedan " +
+              jubilacion +
+              " años para jubilarse (" +
+              diasExactos +
+              " dias)<br>";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
