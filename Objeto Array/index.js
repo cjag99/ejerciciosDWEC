@@ -331,7 +331,7 @@ function ejercicio7() {
 `);
   ventana.document.close();
 }
-
+//TODO: Refactor function to enter for loop as maxArray.length
 function ejercicio8() {
   let ventana = window.open("", "ejercicio8", "width=800", "height=600");
   ventana.document.write(`<!DOCTYPE html>
