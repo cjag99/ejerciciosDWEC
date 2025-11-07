@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 04-03 JS Funciones</title>
+  </head>
+  <body>
+    <div class="contenido">
+      <h1 class="titulo">Práctica 04-03: JS Funciones</h1>
+      <ol>
+        <li>
+          Crea una función Ej1Trigonometica que se le pase dos parametros <br />
+          <ul>
+            <li>un número que es angulo en grados</li>
+            <li>un valor : cos, sen o tan</li>
+          </ul>
+          la función debe pasar el valor a radianes y devolver el resultado
+          dependiendo del parámetro la operación correcta <br />
+          <ul type="square">
+            <li>cos→ coseno</li>
+            <li>sen → seno</li>
+            <li>tan → tangente</li>
+            <li>
+              Lo tienes que pasar sabiendo las funciones solo admiten Radianes
+              (PI's) y que 180o = PI
+            </li>
+          </ul>
+        </li>
+        <fieldset>
+          <legend>Cálculos trigonométricos</legend>
+          <form action="#">
+            <label for="angle"
+              >Indique el ángulo sobre el que va a calcular:</label
+            >
+            <br />
+            <input type="number" name="angle" id="angle" required /> <br />
+            <label for="opera">Indique el tipo de operación:</label> <br />
+            <input
+              type="text"
+              name="opera"
+              id="opera"
+              required
+              placeholder="Opciones válidas cos, sin y tan"
+            />
+            <br />
+            <button type="button" onclick="act1()">Ejecutar código</button>
+            <button type="reset">Borrar</button>
+          </form>
+        </fieldset>
+        <p id="act1"></p>
+        <li>
+          Crea una función Ej2JS que le pases una lista de valores y un id y te
+          cree una lista ordenada con ellos escrita en el el id <br />
+          <code
+            >&lt;div id="algo"> &lt;/div> <br />&lt;script&gt; <br />
+            funcion listaen(“hola,adios, bien,Hasta, mañana”, “algo”) <br />
+            &lt;/script&gt;</code
+          >
+          <br />
+          Eso debe escribir: <br />
+          <ul>
+            <li>hola</li>
+            <li>adios</li>
+            <li>bien</li>
+            <li>hasta</li>
+            <li>mañana</li>
+            <li>algo</li>
+          </ul>
+        </li>
+        <fieldset>
+          <legend>Crear lista de cadenas</legend>
+          <form action="#">
+            <label for="cadena">Introduzca cadenas separadas por comas</label>
+            <br />
+            <input type="text" name="cadena" id="cadena" required /> <br />
+            <button type="button" onclick="ej2JS()">Mostrar lista</button>
+          </form>
+        </fieldset>
+        <p id="act2"></p>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
