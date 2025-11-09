@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 04-02: Arrays Multidimensionales</title>
+  </head>
+  <style>
+    li,
+    thead,
+    .datosNombre {
+      font-weight: bold;
+    }
+    table,
+    th,
+    td {
+      border: solid black 1px;
+    }
+    .contenido {
+      margin: auto;
+      width: 80%;
+      padding: 10px;
+    }
+    span {
+      font-weight: normal;
+    }
+    .tablaNombre {
+      width: 100%;
+      background-color: orange;
+    }
+    .nombre {
+      display: flex;
+      justify-content: center;
+    }
+    .titulo {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">09/11/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="titulo">Práctica 04-02: JS Arrays Multidimensionales</h1>
+      <ol>
+        <li>
+          Copia este codigo para crear un array multidimensional y añádele un
+          código para mostrar solo los nombres en una lista ordenada <br />
+          <code>
+            var datos = new Array(); <br />
+            datos[0] = new Array("Cristina","Seguridad",24); <br />
+            datos[1] = new Array("Catalina","Bases de Datos",17); <br />
+            datos[2] = new Array("Vieites","Sistemas Informáticos",28); <br />
+            datos[3] = new Array("Benjamin","Redes",26);
+          </code>
+        </li>
+        <button type="button" onclick="mostrarNombre()">Ejecutar código</button>
+        <p id="act1"></p>
+        <li>
+          Escribe un programa que genere al azar 20 números enteros comprendidos
+          entre 0 y 9. Estos números se deben introducir en un array de 4 filas
+          por 5 columnas.
+        </li>
+        <button type="button" onclick="generarTabla()">Generar tabla</button>
+        <p id="act2"></p>
+        <li>
+          Crea un array bidimensional que te calcule las tablas de multiplicar
+          del 1 al 100.
+        </li>
+        <button type="button" onclick="tablas1al100()">
+          Mostrar tablas de multiplicar
+        </button>
+        <div class="tablasMulti" id="act3"></div>
+        <li>
+          Modifica el anterior ejercicio para aplicar una función map que te
+          sume 2 a cada valor
+        </li>
+        <button type="button" onclick="sumar2()">Mostrar tablas +2</button>
+        <div id="act4"></div>
+        <li>
+          Modifica el anterior ejercicio para que te calcule la tabla de
+          multiplicar tridimensional i*j*k en una estructura de array
+        </li>
+        <fieldset>
+          <legend>Mostrar tabla tridimensional</legend>
+          <label for="tablaTri">Indique que tabla desea mostrar:</label> <br />
+          <input type="number" name="tablaTri" id="tablaTri" required />
+        </fieldset>
+        <button type="button" onclick="mostrarCapa()">
+          Generar tabla tridimensional
+        </button>
+        <div id="act5"></div>
+        <li>Crea un array multidimensional para almacenar esta tabla</li>
+        <button type="button" onclick="tablaExiste()">Existe el array?</button>
+        <p id="act6"></p>
+        <li>
+          Haz una función que recorra el array calculando la media por años y lo
+          muestre.
+        </li>
+        <button type="button" onclick="mostrarMediaAnyos()">
+          Mostrar media
+        </button>
+        <div id="act7"></div>
+        <li>
+          función mostrartabla(tabla,id) que tome el array y devuelva el código
+          html para dibujarla como una tabla.
+        </li>
+        <button type="button" onclick="generarTablaDatos(datosCalc, 'act8')">
+          Generar tabla de datos
+        </button>
+        <div id="act8"></div>
+        <li>
+          crear una función en JavaScript que resuelva un sistema de ecuaciones
+          lineales representado por matrices. Para un sistema de ecuaciones Ax=B
+          Ax=B, donde A es una matriz 3x3 y B es una matriz 3x1 puedes usar el
+          método de inversión de matrices si A es invertible. Aquí hay una
+          función que puedes utilizar:
+        </li>
+        <fieldset>
+          <legend>Calculo de matrices por inversión</legend>
+          <input type="number" name="x1" id="x1" />x +
+          <input type="number" name="y1" id="y1" />y +
+          <input type="number" name="z1" id="z1" />z =
+          <input type="number" name="j" id="j" /> <br />
+          <input type="number" name="x2" id="x2" />x +
+          <input type="number" name="y2" id="y2" />y +
+          <input type="number" name="z2" id="z2" />z =
+          <input type="number" name="k" id="k" /> <br />
+          <input type="number" name="x3" id="x3" />x +
+          <input type="number" name="y3" id="y3" />y +
+          <input type="number" name="z3" id="z3" />z =
+          <input type="number" name="l" id="l" /> <br />
+          <button type="button" onclick="inversionMatricial()">
+            Resolver matriz
+          </button>
+          <div id="act9"></div>
+        </fieldset>
+      </ol>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
