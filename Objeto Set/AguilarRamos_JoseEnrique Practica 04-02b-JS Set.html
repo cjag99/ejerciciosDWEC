@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctoca 04-02b: JS Set</title>
+    <style>
+      .cartelChars {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      .cartelChars div {
+        width: calc(20% - 16px);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #f5f5dc;
+        border: 2px solid #d4af37;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        text-align: center;
+        font-family: "Cinzel", "Georgia", serif;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .cartelChars div:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+      }
+
+      .cartelChars img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <h1 class="titulo">Práctica 04-02b: JS Set</h1>
+      <ol>
+        <li>
+          Crear un Set de Personajes Crea un conjunto (Set) llamado
+          personajesSet e agrega al menos cinco personajes de "El Señor de los
+          Anillos" como elementos.
+        </li>
+        <button type="button" onclick="Main.generateSampleCharacters()">
+          Generar 5 personajes
+        </button>
+        <li>
+          Imprimir Personajes Itera sobre el conjunto personajesSet e imprime
+          cada personaje en la consola.
+        </li>
+        <button type="button" onclick="Main.showCharacters()">
+          Imprimir personajes
+        </button>
+        <div class="cartelChars" id="listaChars"></div>
+        <li>
+          Verificar la Existencia de un Personaje Escribe una función que tome
+          el conjunto personajesSet y un nombre de personaje como argumentos, y
+          devuelva true si el personaje está presente en el conjunto, y false en
+          caso contrario.
+        </li>
+        <fieldset>
+          <legend>Verificar si un personaje está en la lista</legend>
+          <form action="#">
+            <label for="verificaNombre"
+              >Introduzca el nombre del personaje:</label
+            >
+            <br />
+            <input
+              type="text"
+              name="verificaNombre"
+              id="verificaNombre"
+              required
+            />
+            <br />
+            <label for="verificaFaccion">Introduzca la faccion:</label> <br />
+            <select name="verificaFaccion" id="verificaFaccion">
+              <option value="" selected disabled>
+                -- Selecciona una facción --
+              </option>
+              <option value="Gondor">Gondor</option>
+              <option value="Rohan">Rohan</option>
+              <option value="La Comarca">La Comarca (Hobbits)</option>
+              <option value="Lothlorien">Elfos de Lothlórien</option>
+              <option value="Rivendel">Elfos de Rivendel</option>
+              <option value="Mordor">Mordor</option>
+              <option value="Isengard">Isengard</option>
+              <option value="Erebor">Enanos de Erebor</option>
+              <option value="Harad">Harad</option>
+              <option value="Rhun">Hombres del Este (Rhun)</option>
+            </select>
+            <br />
+            <input type="hidden" name="" id="cogerId" />
+            <button
+              type="button"
+              onclick="Main.showCharacterExistence(Main.getCharacterForm('verificaNombre', 'verificaFaccion'))"
+            >
+              Comprobar personaje
+            </button>
+          </form>
+          <p id="verificarPersonaje"></p>
+        </fieldset>
+        <li>
+          Obtener el Número de Personajes Escribe una función que tome el
+          conjunto personajesSet como argumento y devuelva el número total de
+          personajes en el conjunto.
+        </li>
+        <button type="button" onclick="Main.getSetSize()">
+          Mostrar tamaño de la lista
+        </button>
+        <p id="setSize"></p>
+        <li>
+          Agregar Personajes Únicos Escribe una función que tome el conjunto
+          personajesSet y un nuevo personaje como argumentos, y añada el nuevo
+          personaje al conjunto solo si no está presente. Devuelve el conjunto
+          actualizado.
+        </li>
+        <fieldset>
+          <legend>Insertar personajes LOTR</legend>
+          <form action="#">
+            <h3>Introduzca los datos para insertar personajes de LOTR:</h3>
+            <label for="nombre"
+              >Indique el nombre del personaje a insertar:</label
+            >
+            <br />
+            <input type="text" name="nombre" id="nombre" required /> <br />
+            <label for="faccion">Seleccione la facción de su personaje:</label>
+            <br />
+            <select name="faccion" id="faccion">
+              <option value="" selected disabled>
+                -- Selecciona una facción --
+              </option>
+              <option value="Gondor">Gondor</option>
+              <option value="Rohan">Rohan</option>
+              <option value="La Comarca">La Comarca (Hobbits)</option>
+              <option value="Lothlorien">Elfos de Lothlórien</option>
+              <option value="Rivendel">Elfos de Rivendel</option>
+              <option value="Mordor">Mordor</option>
+              <option value="Isengard">Isengard</option>
+              <option value="Erebor">Enanos de Erebor</option>
+              <option value="Harad">Harad</option>
+              <option value="Rhun">Hombres del Este (Rhun)</option>
+            </select>
+            <hr />
+            <label for="retrato"
+              >Indique la ruta de la imagen del retrato: <br />
+              <span
+                >ATENCIÖN: Aconsejamos sacar los retratos de
+                <a
+                  href="https://tolkiengateway.net/wiki/Category%3AImages_of_characters_in_The_Lord_of_the_Rings"
+                  target="_blank"
+                  >este enlace</a
+                ></span
+              ></label
+            >
+            <br />
+            <input type="text" name="retrato" id="retrato" required /> <br />
+            <button
+              type="button"
+              onclick="Main.addCharacter(Main.getCharacterForm('nombre', 'faccion', 'retrato'))"
+            >
+              Añadir personaje
+            </button>
+          </form>
+        </fieldset>
+        <li>
+          Eliminar Personaje Escribe una función que tome el conjunto
+          personajesSet y un personaje como argumentos, y elimine el personaje
+          del conjunto si está presente. Imprime un mensaje indicando si el
+          personaje fue eliminado o si no estaba en el conjunto.
+        </li>
+        <fieldset>
+          <legend>Eliminar un personaje de la lista</legend>
+          <form action="#">
+            <label for="eliminaNombre"
+              >Introduzca el nombre del personaje:</label
+            >
+            <br />
+            <input
+              type="text"
+              name="eliminaNombre"
+              id="eliminaNombre"
+              required
+            />
+            <br />
+            <label for="eliminaFaccion">Introduzca la faccion:</label> <br />
+            <select name="eliminaFaccion" id="eliminaFaccion">
+              <option value="" selected disabled>
+                -- Selecciona una facción --
+              </option>
+              <option value="Gondor">Gondor</option>
+              <option value="Rohan">Rohan</option>
+              <option value="La Comarca">La Comarca (Hobbits)</option>
+              <option value="Lothlorien">Elfos de Lothlórien</option>
+              <option value="Rivendel">Elfos de Rivendel</option>
+              <option value="Mordor">Mordor</option>
+              <option value="Isengard">Isengard</option>
+              <option value="Erebor">Enanos de Erebor</option>
+              <option value="Harad">Harad</option>
+              <option value="Rhun">Hombres del Este (Rhun)</option>
+            </select>
+            <br />
+            <button
+              type="button"
+              onclick="Main.deleteCharacter(Main.getCharacterForm('eliminaNombre', 'eliminaFaccion'))"
+            >
+              Eliminar personaje
+            </button>
+          </form>
+          <p id="eliminarPersonaje"></p>
+        </fieldset>
+        <li>
+          Combinar dos Sets de Personajes Crea dos conjuntos de personajes, set1
+          y set2, y luego escribe una función que combine ambos conjuntos en uno
+          solo. Asegúrate de que no haya elementos duplicados en el nuevo
+          conjunto.
+        </li>
+      </ol>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
