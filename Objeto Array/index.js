@@ -331,7 +331,7 @@ function ejercicio7() {
 `);
   ventana.document.close();
 }
-//TODO: Refactor function to enter for loop as maxArray.length
+
 function ejercicio8() {
   let ventana = window.open("", "ejercicio8", "width=800", "height=600");
   ventana.document.write(`<!DOCTYPE html>
@@ -366,19 +366,16 @@ function ejercicio8() {
         let array = new Array();
         let content = document.getElementById("content");
         let size = document.getElementById("size");
-        for (const ind in array1) {
-          array.push(array1[ind]);
-          if (ind < array2.length) {
-            array.push(array2[ind]);
-          }
-          if (ind < array3.length) {
-            array.push(array3[ind]);
-          }
-        }
+        let iterate = Math.max(array1.length, array2.length, array3.length)
+        for(let i = 0; i < iterate; i++){
+        if (i < array1.length) array.push(array1[i]);
+        if (i < array2.length) array.push(array2[i]);
+        if (i < array3.length) array.push(array3[i]);
+        } 
         content.innerHTML = "";
         size.innerHTML = "";
         content.innerHTML +=
-          "El contenido del array es " + array.valueOf() + "<br>";
+          "El contenido del array es " + array.join(', ')+ "<br>";
         size.innerHTML += "El tamaño del array es " + array.length;
       }
     </script>

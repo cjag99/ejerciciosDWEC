@@ -4,9 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 04-03 JS Funciones</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+      fieldset {
+        width: 30%;
+        margin-left: 10%;
+      }
+    </style>
   </head>
   <body>
     <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">09/11/25</span></td>
+          </tr>
+        </table>
+      </div>
       <h1 class="titulo">Práctica 04-03: JS Funciones</h1>
       <ol>
         <li>
@@ -78,15 +125,175 @@
           </form>
         </fieldset>
         <p id="act2"></p>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+          Modifica el anterior para que uses parametros rest con un numero
+          indeterminado de parametros, esto es la función debe ser algo como
+          <br />
+          <code>
+            &lt;div id='identificador'&gt;&lt;/div&gt;<br />
+            &lt;script&gt;<br />
+            funcion listaEn(identificador, hola,adios,bien,hasta mañana, algo)
+            <br />
+            &lt;/script&gt;
+          </code>
+          <br />
+          Eso debe escribir: <br />
+          <ul>
+            <li>Hola</li>
+            <li>adios</li>
+            <li>bien</li>
+            <li>hasta mañana</li>
+            <li>algo</li>
+          </ul>
+        </li>
+        <fieldset>
+          <legend>Mostrar lista con parámetros REST</legend>
+          <form action="#">
+            <label for="listaRest"
+              >Introduzca cadenas, separadas por comas:</label
+            >
+            <br />
+            <input type="text" name="listaRest" id="listaRest" required />
+            <button
+              type="button"
+              onclick="listaEn('listaConRest', ...recogerParams('listaRest'))"
+            >
+              Mostrar lista
+            </button>
+          </form>
+        </fieldset>
+        <div id="listaConRest"></div>
+        <li>
+          Crea una función anónima que calcule el triple de un numero y asigna
+          lo a una variable y ejecutalo.
+        </li>
+        <fieldset>
+          <legend>Mostrar el triple de un nº</legend>
+          <label for="tripleNum">Indique un nº:</label> <br />
+          <input type="number" name="tripleNum" id="tripleNum" required />
+          <br />
+          <button type="button" onclick="mostrarTriple()">
+            Mostrar el triple
+          </button>
+        </fieldset>
+        <p id="act4"></p>
+        <li>
+          Crea una función anónima con flechas que calcule el cuadrado de un
+          numero y asigna lo a una variable y ejecutalo.
+        </li>
+        <fieldset>
+          <legend>Mostrar el cuadrado de un nº</legend>
+          <label for="cuadradoNum">Indique un nº:</label> <br />
+          <input type="number" name="cuadrado" id="cuadradoNum" required />
+          <br />
+          <button type="button" onclick="mostrarCuadrado()">
+            Mostrar el cuadrado
+          </button>
+        </fieldset>
+        <p id="act5"></p>
+        <li>
+          Crea una función anónima con flechas que escriba hola mundo y que se
+          ejecute automáticamente.
+        </li>
+        <p id="act6"></p>
+        <li>
+          Crea una función anónima con flechas que ponga en negrita el parámetro
+          añadiéndole &lt;strong&gt; &lt;/strong&gt; y usala con la función map
+          sobre un array como por ejemploCrea una función anónima con flechas
+          que ponga en negrita el parámetro añadiéndole &lt;strong&gt;
+          &lt;/strong&gt; y usala con la función map sobre un array como por
+          ejemplo: <br />
+          <code> a = [“ola”,”adios”,”amalia pide muchos detalles”]; </code>
+        </li>
+        <fieldset>
+          <legend>Ver texto en negrita</legend>
+          <label for="arrowStrong"
+            >Introduzca cadenas separadas por comas:</label
+          >
+          <br />
+          <input type="text" name="arrowStrong" id="arrowStrong" /> <br />
+          <button
+            type="button"
+            onclick="mostrarListaNegrita('act7', ...recogerParams('arrowStrong'))"
+          >
+            Mostrar array
+          </button>
+        </fieldset>
+        <p id="act7"></p>
+        <li>
+          Escribe una función que genere al azar 20 números enteros comprendidos
+          entre 0 y 9. <br />
+          Estos números se deben introducir en un array de 4 filas por 5
+          columnas y mostrárnoslo como un string que sea una tabla
+        </li>
+        <button type="button" onclick="generarTabla()">Generar Tabla</button>
+
+        <div id="act8"></div>
+        <li>
+          Crea un función que te dibuje el cuadrado mágico 3x3 en una tabla con
+          el valor de entrada i <br />
+          Un cuadrado mágico es una tabla de grado primario donde se dispone de
+          una serie de números enteros en un cuadrado o matriz de forma tal que
+          la suma de los números por columnas, filas y diagonales principales
+          sea la misma. <br />
+          Sabiendo que hay que hacer una array asignación
+        </li>
+        <fieldset>
+          <legend>Generar cuadrado mágico 3x3</legend>
+          <form action="#">
+            <label for="magicSquare">Introduzca un nº entero:</label> <br />
+            <input type="number" name="magicSquare" id="magicSquare" required />
+            <br />
+            <button type="button" onclick="generarCuadradoMagico()">
+              Generar cuadrado mágico
+            </button>
+          </form>
+        </fieldset>
+        <div id="act9"></div>
+        <li>
+          Haz una función que se le pase un id y un color y cambie su color de
+          texto. Debes usar el siguiente código <br />
+          <code
+            >let obj = document.getElementById(Parametro); <br />
+            obj.style.color =nombreColor;
+          </code>
+          Debes asociarlo a un combotext y un button para poder ver varios
+          ejemplos.
+        </li>
+        <fieldset>
+          <legend>Cambiando el color del texto</legend>
+          <h4 id="act10">Este es el texto que va a cambiar de color</h4>
+          <label for="nombreColor">Seleccione el color del texto:</label> <br />
+          <select name="nombreColor" id="nombreColor">
+            <option value="red">Rojo</option>
+            <option value="green">Verde</option>
+            <option value="blue">Azul</option>
+            <option value="yellow">Amarillo</option>
+            <option value="orange">Naranja</option>
+          </select>
+          <button type="button" onclick="cambiarColor()">Cambiar color</button>
+        </fieldset>
+        <li>
+          Haz un ejercicio que calcule el factorial de un numero de manera
+          recursiva.
+        </li>
+        <fieldset>
+          <legend>Factorial de un nº</legend>
+          <label for="factorial">Introduzca un nº positivo mayor que 0:</label>
+          <br />
+          <input
+            type="number"
+            name="factorial"
+            id="factorial"
+            min="1"
+            required
+          />
+          <br />
+          <button type="button" onclick="mostrarFactorial()">
+            Calcular factorial
+          </button>
+        </fieldset>
+        <p id="act11"></p>
       </ol>
     </div>
     <script src="./main.js"></script>
