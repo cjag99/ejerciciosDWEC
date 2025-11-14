@@ -1,0 +1,92 @@
+[
+  {
+    "nombre": "Frodo Bolsón",
+    "faccion": "La Comarca",
+    "retrato": "https://tolkiengateway.net/w/images/4/40/Anna_Lee_-_Frodo.jpg"
+  },
+  {
+    "nombre": "Samsagaz Gamyi",
+    "faccion": "La Comarca",
+    "retrato": "https://tolkiengateway.net/w/images/thumb/3/35/Campbell_White_-_Sam%2C_Loyal_Attendant.jpg/1280px-Campbell_White_-_Sam%2C_Loyal_Attendant.jpg"
+  },
+  {
+    "nombre": "Gandalf",
+    "faccion": "Istari",
+    "retrato": "https://tolkiengateway.net/w/images/c/c2/Daniel_Govar_-_Gandalf_the_Grey.jpg"
+  },
+  {
+    "nombre": "Aragorn",
+    "faccion": "Gondor",
+    "retrato": "https://tolkiengateway.net/w/images/9/94/Ana_Kusicka_-_Chieftain_of_the_Dunedain.jpg"
+  },
+  {
+    "nombre": "Legolas",
+    "faccion": "Elfos de Lothlórien",
+    "retrato": "https://tolkiengateway.net/w/images/a/ac/April_Lee_-_Wielded_Twice.jpg"
+  },
+  {
+    "nombre": "Gimli",
+    "faccion": "Enanos de Erebor",
+    "retrato": "https://tolkiengateway.net/w/images/c/cb/InDeepBlue_-_Gimli_in_Lothlorien.jpg"
+  },
+  {
+    "nombre": "Boromir",
+    "faccion": "Gondor",
+    "retrato": "https://tolkiengateway.net/w/images/2/26/Ana_Kusicka_-_Son_of_Gondor.jpg"
+  },
+  {
+    "nombre": "Meriadoc Brandigamo",
+    "faccion": "La Comarca",
+    "retrato": "https://tolkiengateway.net/w/images/thumb/6/61/Jenny_Dolfen_-_Master_Holbytla.jpg/800px-Jenny_Dolfen_-_Master_Holbytla.jpg"
+  },
+  {
+    "nombre": "Peregrin Tuk",
+    "faccion": "La Comarca",
+    "retrato": "https://tolkiengateway.net/w/images/thumb/2/2b/Campbell_White_-_Peregrin_Took.jpg/1280px-Campbell_White_-_Peregrin_Took.jpg"
+  },
+  {
+    "nombre": "Galadriel",
+    "faccion": "Elfos de Lothlórien",
+    "retrato": "https://tolkiengateway.net/w/images/a/af/Alan_Lee_-_The_Mirror_of_Galadriel.jpg"
+  },
+  {
+    "nombre": "Elrond",
+    "faccion": "Elfos de Rivendel",
+    "retrato": "https://tolkiengateway.net/w/images/e/e5/Ana_Kusicka_-_Elrond.jpg"
+  },
+  {
+    "nombre": "Saruman",
+    "faccion": "Isengard",
+    "retrato": "https://tolkiengateway.net/w/images/thumb/0/06/Anna_Kulisz_-_Saruman_with_the_Palantir.jpg/800px-Anna_Kulisz_-_Saruman_with_the_Palantir.jpg"
+  },
+  {
+    "nombre": "Gollum",
+    "faccion": "Mordor",
+    "retrato": "https://tolkiengateway.net/w/images/thumb/2/2c/Campbell_White_-_Smeagol%2C_Helpful_Guide.jpg/1280px-Campbell_White_-_Smeagol%2C_Helpful_Guide.jpg"
+  },
+  {
+    "nombre": "Bilbo Bolsón",
+    "faccion": "La Comarca",
+    "retrato": "https://tolkiengateway.net/w/images/thumb/2/21/Daniel_Govar_-_Riddles_in_the_Dark.jpg/800px-Daniel_Govar_-_Riddles_in_the_Dark.jpg"
+  },
+  {
+    "nombre": "Arwen",
+    "faccion": "Elfos de Rivendel",
+    "retrato": "https://tolkiengateway.net/w/images/d/d4/Anna_Kulisz_-_Arwen.jpg"
+  },
+  {
+    "nombre": "Sauron",
+    "faccion": "Mordor",
+    "retrato": "https://tolkiengateway.net/w/images/3/3c/L%C3%ADda_Holubov%C3%A1_-_Annatar.jpg"
+  },
+  {
+    "nombre": "Rey Brujo de Angmar",
+    "faccion": "Mordor",
+    "retrato": "https://tolkiengateway.net/w/images/thumb/f/f9/Coliandre_-_Eowyn_%26_Witch_King_Angmar.jpg/1280px-Coliandre_-_Eowyn_%26_Witch_King_Angmar.jpg"
+  },
+  {
+    "nombre": "Nazgûl (Espectros del Anillo)",
+    "faccion": "Mordor",
+    "retrato": "https://tolkiengateway.net/w/images/thumb/8/8d/Arnaud_Sohyer-B%C3%BCdow_-_Nazgul_at_Bree.jpg/1280px-Arnaud_Sohyer-B%C3%BCdow_-_Nazgul_at_Bree.jpg"
+  }
+]
