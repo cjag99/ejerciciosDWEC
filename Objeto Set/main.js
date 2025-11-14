@@ -12,35 +12,22 @@ const Main = {
       ? new LOTRCharacter(nombre, faccion, retrato)
       : new LOTRCharacter(nombre, faccion);
   },
-  generateSampleCharacters() {
-    let hobbits = [
-      new LOTRCharacter(
-        "Frodo Bolsón",
-        "La Comarca",
-        "https://tolkiengateway.net/w/images/4/40/Anna_Lee_-_Frodo.jpg"
-      ),
-      new LOTRCharacter(
-        "Samsagaz Gamyi",
-        "La Comarca",
-        "https://tolkiengateway.net/w/images/thumb/3/35/Campbell_White_-_Sam%2C_Loyal_Attendant.jpg/1280px-Campbell_White_-_Sam%2C_Loyal_Attendant.jpg"
-      ),
-      new LOTRCharacter(
-        "Peregrin Tuk",
-        "La Comarca",
-        "https://tolkiengateway.net/w/images/thumb/2/2b/Campbell_White_-_Peregrin_Took.jpg/1280px-Campbell_White_-_Peregrin_Took.jpg"
-      ),
-      new LOTRCharacter(
-        "Meriadoc Brandigamo",
-        "La Comarca",
-        "https://tolkiengateway.net/w/images/thumb/6/61/Jenny_Dolfen_-_Master_Holbytla.jpg/800px-Jenny_Dolfen_-_Master_Holbytla.jpg"
-      ),
-      new LOTRCharacter(
-        "Bilbo Bolsón",
-        "La Comarca",
-        "https://tolkiengateway.net/w/images/thumb/2/21/Daniel_Govar_-_Riddles_in_the_Dark.jpg/800px-Daniel_Govar_-_Riddles_in_the_Dark.jpg"
-      ),
-    ];
-    hobbits.forEach((e) => this.addCharacter(e));
+  async generateSampleCharacters() {
+    try {
+      const response = await fetch("./characters.json");
+      const data = await response.json();
+      const personajes = data.map(
+        (e) => new LOTRCharacter(e.nombre, e.faccion, e.retrato)
+      );
+      const seleccionados = new Set();
+      while (seleccionados.size < 5) {
+        const numR = Math.floor(Math.random() * personajes.length);
+        seleccionados.add(personajes[numR]);
+      }
+      seleccionados.forEach((e) => this.addCharacter(e));
+    } catch (error) {
+      console.log(error);
+    }
   },
   addCharacter(nuevoCharacter) {
     if (this.characterExists(nuevoCharacter)) {
@@ -96,5 +83,43 @@ const Main = {
       console.log(`ERROR: ${nuevoCharacter.nombre} no está en el conjunto`);
     }
   },
+  async generateCombinationSet() {
+    LOTRSet.clear();
+    let seleccionados = new Set();
+    try {
+      const response = await fetch("./characters.json");
+      const data = await response.json();
+      const personajes = data.map(
+        (e) => new LOTRCharacter(e.nombre, e.faccion, e.retrato)
+      );
+      const seleccionados1 = new Set();
+      const seleccionados2 = new Set();
+      while (seleccionados1.size < 5) {
+        const numR = Math.floor(Math.random() * personajes.length);
+        seleccionados1.add(personajes[numR]);
+      }
+      while (seleccionados2.size < 5) {
+        const numR = Math.floor(Math.random() * personajes.length);
+        seleccionados2.add(personajes[numR]);
+      }
+      seleccionados = new Set(seleccionados1);
+      for (const char of seleccionados2) {
+        let duplicate = false;
+        for (const char2 of seleccionados) {
+          if (char2.compareCharacters(char)) {
+            duplicate = true;
+            break;
+          }
+        }
+        if (!duplicate) {
+          seleccionados.add(char);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    seleccionados.forEach((e) => this.addCharacter(e));
+  },
 };
+
 window.Main = Main;

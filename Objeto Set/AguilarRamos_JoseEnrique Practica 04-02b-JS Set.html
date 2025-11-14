@@ -38,10 +38,56 @@
         border-radius: 5px;
         margin-bottom: 10px;
       }
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+      fieldset {
+        width: 35%;
+        margin-left: 20%;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
     <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">14/11/25</span></td>
+          </tr>
+        </table>
+      </div>
       <h1 class="titulo">Práctica 04-02b: JS Set</h1>
       <ol>
         <li>
@@ -89,6 +135,7 @@
               <option value="Rohan">Rohan</option>
               <option value="La Comarca">La Comarca (Hobbits)</option>
               <option value="Lothlorien">Elfos de Lothlórien</option>
+              <option value="Istari">Istari</option>
               <option value="Rivendel">Elfos de Rivendel</option>
               <option value="Mordor">Mordor</option>
               <option value="Isengard">Isengard</option>
@@ -141,6 +188,7 @@
               <option value="Rohan">Rohan</option>
               <option value="La Comarca">La Comarca (Hobbits)</option>
               <option value="Lothlorien">Elfos de Lothlórien</option>
+              <option value="Istari">Istari</option>
               <option value="Rivendel">Elfos de Rivendel</option>
               <option value="Mordor">Mordor</option>
               <option value="Isengard">Isengard</option>
@@ -199,6 +247,7 @@
               <option value="Rohan">Rohan</option>
               <option value="La Comarca">La Comarca (Hobbits)</option>
               <option value="Lothlorien">Elfos de Lothlórien</option>
+              <option value="Istari">Istari</option>
               <option value="Rivendel">Elfos de Rivendel</option>
               <option value="Mordor">Mordor</option>
               <option value="Isengard">Isengard</option>
@@ -222,6 +271,9 @@
           solo. Asegúrate de que no haya elementos duplicados en el nuevo
           conjunto.
         </li>
+        <button type="button" onclick="Main.generateCombinationSet()">
+          Generar combinado
+        </button>
       </ol>
     </div>
     <script type="module" src="./main.js"></script>
