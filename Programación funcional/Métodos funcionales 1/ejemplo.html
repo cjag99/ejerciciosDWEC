@@ -3,9 +3,310 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>
+      Práctica 04-10 JS Metodos funcionales 1- from, of, at, A ... th, unshift,
+      shift, push, pop, fill, concat
+    </title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">01/12/2025</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="titulo">
+        Práctica 04-10 JS Metodos funcionales 1- from, of, at, A ... th,
+        unshift, shift, push, pop, fill, concat
+      </h1>
+      <ol>
+        <li>
+          <h3>Inventario de productos en una tienda</h3>
+          <p>
+            <b>Contexto:</b> Estás manejando el inventario de una tienda y
+            comienzas con un inventario básico de productos.
+          </p>
+          <ol>
+            <li>
+              <b>Descripción: </b>Crea un array con los ID de los productos de
+              la tienda [1, 2, 3, 4, 5] usando Array.of(). Luego:
+              <ul type="rectangle">
+                <li>
+                  Un cliente devolvió productos dañados, así que usa
+                  Array.fill() para marcar los productos en las posiciones 2 a 4
+                  con el código 7 (producto defectuoso).
+                </li>
+                <li>
+                  La tienda recibió nuevos productos, así que usa
+                  Array.unshift() para agregar dos nuevos IDs (0 y 0) al
+                  inventario (nuevos productos).
+                </li>
+                <li>
+                  Se vendió el último producto, así que usa Array.pop() para
+                  eliminar el último ID.
+                </li>
+                <li>
+                  Finalmente, llega un nuevo lote con IDs [10, 20, 30], por lo
+                  que debes combinar los arrays con Array.concat().
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <b>Resultado esperado: </b>
+              <code>[0, 0, 1, 7, 7, 10, 20, 30]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="inventarioProductos()">
+          Generar inventario
+        </button>
+        <div id="act1"></div>
+        <hr />
+        <li>
+          <h3>Lista de empleados</h3>
+          <p>
+            <b>Contexto:</b> Estás gestionando una lista de empleados de una
+            empresa.
+          </p>
+          <ol>
+            <li>
+              <b>Descripción: </b>Crea un array de empleados a partir de las
+              iniciales de sus nombres usando Array.from() a partir del string
+              "abcdef" (por ejemplo: Ana, Bruno, Carlos, Daniela, Ernesto,
+              Fernanda). Luego:
+              <ul type="rectangle">
+                <li>
+                  Usa Array.at() para obtener el nombre del tercer y último
+                  empleado.
+                </li>
+                <li>
+                  El segundo empleado ha cambiado de departamento, así que usa
+                  Array.with() para cambiar su inicial por "X".
+                </li>
+                <li>
+                  El primer empleado se ha jubilado, por lo que debes eliminarlo
+                  con Array.shift().
+                </li>
+                <li>
+                  Finalmente, has contratado a dos nuevos empleados, así que usa
+                  Array.push() para añadir "Y" y "Z" al final de la lista.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado: </b>
+              <code>['b', 'X', 'd', 'e', 'Y', 'Z']</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="empleados()">Generar empleados</button>
+        <div id="act2"></div>
+        <hr />
+        <li>
+          <h3>Gestión de calificaciones</h3>
+          <p>
+            <b>Contexto:</b> Eres un profesor que está gestionando las
+            calificaciones de los estudiantes.
+          </p>
+          <ol>
+            <li>
+              <b>Descripción: </b>Tienes un array que contiene las
+              calificaciones de los estudiantes [10, 11, 12, 13, 14, 15, 16, 17,
+              18, 19, 20]. Luego:
+              <ul type="rectangle">
+                <li>
+                  Algunas calificaciones deben ser ajustadas, así que usa
+                  Array.fill() para modificar las calificaciones entre las
+                  posiciones 4 y 8 por 99 (ajuste especial).
+                </li>
+                <li>
+                  Se agregaron estudiantes a la lista, así que usa
+                  Array.unshift() para agregar las calificaciones de tres nuevos
+                  estudiantes (5, 6, 7).
+                </li>
+                <li>
+                  Un estudiante ha sido transferido y uno más se graduó, por lo
+                  que usa Array.pop() y Array.shift() para eliminar las
+                  calificaciones del último y primer estudiante respectivamente.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado: </b>
+              <code>[6, 7, 10, 11, 99, 99, 99, 99, 15, 16, 17, 18, 19]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="calificaciones()">
+          Generar calificaciones
+        </button>
+        <div id="act3"></div>
+        <hr />
+        <li>
+          <h3>Precio de productos</h3>
+          <p>
+            <b>Contexto:</b> Estás gestionando los precios de productos de un
+            supermercado.
+          </p>
+          <ol>
+            <li>
+              <b>Descripción: </b>Tienes un array con los precios de algunos
+              productos [100, 200, 300, 400]. Luego:
+              <ul type="rectangle">
+                <li>
+                  Usa Array.push() para añadir los precios de nuevos productos
+                  (500 y 600).
+                </li>
+                <li>
+                  El primer producto ya no está en venta, por lo que usa
+                  Array.shift() para eliminar su precio.
+                </li>
+                <li>
+                  El tercer producto tiene un nuevo precio, así que usa
+                  Array.with() para cambiar su precio a 999.
+                </li>
+                <li>
+                  Finalmente, tienes una nueva lista de precios [700, 800, 900],
+                  así que combina los arrays con Array.concat().
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado: </b>
+              <code>[200, 300, 999, 500, 600, 700, 800, 900]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="productos()">Generar productos</button>
+        <div id="act4"></div>
+        <hr />
+        <li>
+          <h3>Modificación de texto en una base de datos</h3>
+          <p>
+            <b>Contexto:</b> Estás procesando un texto que se va a almacenar en
+            una base de datos.
+          </p>
+          <ol>
+            <li>
+              <b>Descripción: </b>Crea un array de caracteres a partir del texto
+              "hello world" usando Array.from(). Luego:
+              <ul type="rectangle">
+                <li>
+                  Usa Array.at() para obtener el quinto carácter (debes validar
+                  que es una letra válida) y el último.
+                </li>
+                <li>
+                  Usa Array.unshift() para añadir un marcador especial "#" al
+                  inicio del array.
+                </li>
+                <li>
+                  Reemplaza todos los espacios con el carácter "*" usando
+                  Array.fill().
+                </li>
+                <li>
+                  Combina el texto con una nueva frase exclamativa agregando
+                  ['!', '!', '!'] al final con Array.concat().
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado: </b>
+              <code
+                >['#', 'h', 'e', 'l', 'l', '*', 'w', 'o', 'r', 'l', 'd', '!',
+                '!', '!']</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="generarTexto()">Generar texto</button>
+        <div id="act5"></div>
+        <hr />
+        <li>
+          <h3>Gestión de pedidos</h3>
+          <p>
+            <b>Contexto:</b> Estás gestionando los números de pedidos de una
+            tienda en línea.
+          </p>
+          <ol>
+            <li>
+              <b>Descripción: </b>Crea un array con los números de los pedidos
+              pendientes [1, 2, 3, 4, 5, 6]. Luego:
+              <ul type="rectangle">
+                <li>
+                  Usa Array.at() para obtener el número del tercer pedido y del
+                  último pedido.
+                </li>
+                <li>
+                  El primer pedido ha sido procesado, así que usa Array.with()
+                  para cambiar el número del primer pedido a 0 (pedido
+                  procesado).
+                </li>
+                <li>
+                  Los pedidos del 2 al 4 se han cancelado, así que usa
+                  Array.fill() para cambiar esos valores por 8 (pedido
+                  cancelado).
+                </li>
+                <li>
+                  El primer y último pedido han sido procesados, así que usa
+                  Array.shift() y Array.pop() para eliminarlos.
+                </li>
+                <li>
+                  Finalmente, se agregaron tres nuevos pedidos, así que usa
+                  Array.push() para agregar los pedidos 7, 8, 9.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado: </b>
+              <code>[8, 8, 8, 5, 6, 7, 8, 9]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="gestionarPedidos()">
+          Generar pedidos
+        </button>
+        <div id="act6"></div>
+      </ol>
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>

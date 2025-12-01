@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Práctica 04-11 JS Metodos Funcionales 2 - copyWithin, ... slice, sort,
+      toSorted, reverse, toReverse.
+    </title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">01/12/25</span></td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="titulo">
+        04-11 JS Metodos Funcionales 2 - copyWithin, ... slice, sort, toSorted,
+        reverse, toReverse.
+      </h1>
+      <ol>
+        <li>
+          <h3>Reorganización de datos en una tabla</h3>
+          <p>
+            <b>Contexto: </b> Estás gestionando una tabla de datos de un sistema
+            y necesitas reorganizar algunas filas.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Tienes un array que contiene los ID de las
+                filas de una tabla: [10, 20, 30, 40, 50]. Luego:
+              </p>
+              <ul type="square">
+                <li>
+                  Usa Array.copyWithin() para copiar los IDs que van desde la
+                  posición 2 a 4, al inicio del array (en la posición 0).
+                </li>
+                <li>
+                  Usa Array.reverse() para invertir el orden de los IDs en el
+                  array.
+                </li>
+                <li>
+                  Finalmente, usa Array.slice() para seleccionar los tres
+                  primeros IDs.
+                </li>
+              </ul>
+            </li>
+
+            <li><b>Resultado esperado: </b> <code>[30, 40, 50]</code></li>
+          </ol>
+        </li>
+        <button type="button" onclick="trabajarTabla()">
+          Generar datos de tabla
+        </button>
+        <div id="act1"></div>
+        <hr />
+        <li>
+          <h3>Nombres de productos en un catálogo</h3>
+          <p>
+            <b>Contexto: </b> Tienes un catálogo de productos con sus nombres y
+            quieres mostrar la clave de cada producto junto con su nombre.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Tienes un array con los nombres de los
+                productos [“manzana”, “naranja”, “plátano”]. Luego:
+              </p>
+              <ul type="square">
+                <li>
+                  Usa Array.entries() para obtener tanto la clave (índice) como
+                  el valor (nombre del producto).
+                </li>
+                <li>
+                  Usa un bucle for...of para recorrer las entradas y mostrar un
+                  mensaje para cada producto, por ejemplo: "Producto 0:
+                  manzana".
+                </li>
+                <li>
+                  Finalmente, usa Array.keys() para obtener un array de las
+                  claves de los productos.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <b>Resultado esperado: <br /></b>
+              <code
+                >Producto 0: manzana <br />
+                Producto 1: naranja <br />
+                Producto 2: plátano <br />
+                Claves de productos: [0, 1, 2]</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="catalogoProductos()">
+          Generar catálogo
+        </button>
+        <div id="act2"></div>
+        <hr />
+        <li>
+          <h3>Filtrar y ordenar un registro de estudiantes</h3>
+          <p>
+            <b>Contexto: </b> Estás gestionando un registro de calificaciones de
+            estudiantes.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Tienes un array con las calificaciones [85,
+                75, 95, 65, 90]. Luego:
+              </p>
+              <ul type="square">
+                <li>
+                  Usa Array.values() para obtener un iterador que contenga
+                  únicamente los valores de las calificaciones.
+                </li>
+                <li>
+                  Usa Array.sort() con una función de comparación para ordenar
+                  las calificaciones de mayor a menor.
+                </li>
+                <li>
+                  Finalmente, usa Array.slice() para obtener las tres
+                  calificaciones más altas.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <b>Resultado esperado: </b>
+              <code>[95, 90, 85]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="registroEstudiantes()">
+          Generar registro de estudiantes
+        </button>
+        <div id="act3"></div>
+        <hr />
+        <li>
+          <h3>Gestión de pedidos en una tienda en línea</h3>
+          <p>
+            <b>Contexto: </b> Estás gestionando una lista de pedidos y necesitas
+            modificarla para procesar y mostrar ciertos pedidos prioritarios.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Tienes un array con los números de pedidos
+                [1003, 1001, 1002, 1005, 1004]. Luego:
+              </p>
+              <ul type="square">
+                <li>
+                  Usa Array.sort() para ordenar los pedidos en orden ascendente.
+                </li>
+                <li>
+                  Usa Array.reverse() para invertir el orden y mostrar los
+                  pedidos en orden descendente (priorizando los más recientes).
+                </li>
+                <li>
+                  Usa Array.slice() para seleccionar los tres primeros pedidos
+                  prioritarios.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <b>Resultado esperado: </b>
+              <code>[1005, 1004, 1003]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="gestionPedidos()">
+          Generar gestión de pedidos
+        </button>
+        <div id="act4"></div>
+        <hr />
+        <li>
+          <h3>Reorganizar y filtrar una lista de empleados</h3>
+          <p>
+            <b>Contexto: </b> Tienes una lista de IDs de empleados en un
+            sistema, y necesitas reorganizarla y filtrar los empleados activos.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Crea un array con los IDs de los empleados
+                [300, 200, 400, 100]. Luego:
+              </p>
+              <ul type="square">
+                <li>
+                  Usa Array.toSorted() para crear un nuevo array con los IDs
+                  ordenados en orden ascendente, sin modificar el array
+                  original.
+                </li>
+
+                <li>
+                  Usa Array.toReverse() para crear una versión invertida de este
+                  array.
+                </li>
+                <li>
+                  Usa Array.slice() para seleccionar los dos primeros empleados
+                  de la lista invertida (los empleados más recientes).
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <b>Resultado esperado: </b>
+              <code>[400, 300]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="reorganizarEmpleados()">
+          Generar lista de empleados
+        </button>
+        <div id="act5"></div>
+        <hr />
+        <li>
+          <h3>Selección de artículos destacados en una tienda</h3>
+          <p>
+            <b>Contexto: </b> Eres responsable de gestionar los artículos
+            destacados en la página principal de una tienda en línea.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Crea un array que contenga los precios de
+                los artículos destacados [50, 30, 20, 10, 40]. Luego:
+              </p>
+              <ul type="square">
+                <li>
+                  Usa Array.copyWithin() para copiar el segundo y tercer
+                  artículo (índices 1 y 2) y reemplazar las posiciones 3 y 4.
+                </li>
+
+                <li>
+                  Usa Array.sort() para ordenar los precios de menor a mayor.
+                </li>
+                <li>
+                  Usa Array.slice() para seleccionar los tres artículos más
+                  baratos.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <b>Resultado esperado: </b>
+              <code>[10, 20, 20]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="seleccionarArticulos()">
+          Generar artículos destacados
+        </button>
+        <div id="act6"></div>
+        <hr />
+        <li>
+          <h3>Mostrar claves y valores de configuraciones del sistema</h3>
+          <p>
+            <b>Contexto: </b> Estás administrando una aplicación y necesitas
+            mostrar las configuraciones claves junto con sus valores.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Tienes un array con las configuraciones del
+                sistema [“pantalla completa”, “sonido activado”, “modo oscuro”].
+                Luego:
+              </p>
+              <ul type="square">
+                <li>
+                  Usa Array.keys() para obtener las claves de cada
+                  configuración.
+                </li>
+
+                <li>Usa Array.values() para obtener los valores.</li>
+                <li>
+                  Usa un bucle for...of para mostrar tanto la clave como el
+                  valor de cada configuración en la consola.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <b>Resultado esperado: </b> <br />
+              <code
+                >Clave 0: pantalla completa <br />
+                Clave 1: sonido activado <br />
+                Clave 2: modo oscuro</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="mostrarConfiguraciones()">
+          Mostrar configuraciones
+        </button>
+        <div id="act7"></div>
+        <hr />
+        <li>
+          <h3>Reorganizar comentarios de un blog</h3>
+          <p>
+            <b>Contexto: </b> Estás gestionando los comentarios de un blog y
+            necesitas reorganizarlos.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Tienes un array con los IDs de los
+                comentarios más recientes en un blog [5003, 5001, 5002, 5005,
+                5004]. Luego:
+              </p>
+              <ul type="square">
+                <li>
+                  Usa Array.toSorted() para crear un array con los comentarios
+                  ordenados por orden ascendente (más antiguos primero).
+                </li>
+
+                <li>
+                  Usa Array.reverse() para invertir el orden y mostrar los
+                  comentarios en orden descendente (más recientes primero).
+                </li>
+                <li>
+                  Usa Array.slice() para seleccionar los últimos dos comentarios
+                  publicados.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <b>Resultado esperado: </b>
+              <code>[5005, 5004]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="reorganizarComentarios()">
+          Reorganizar comentarios
+        </button>
+        <div id="act8"></div>
+      </ol>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
