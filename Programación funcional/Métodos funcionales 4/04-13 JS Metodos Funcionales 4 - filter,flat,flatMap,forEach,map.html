@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      04-13 JS Metodos Funcionales 4 - filter,flat,flatMap,forEach,map
+    </title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">04/12/25</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <h1 class="titulo">
+        Práctica 04-13 JS Metodos Funcionales 4 -
+        filter,flat,flatMap,forEach,map
+      </h1>
+
+      <ol>
+        <!-- Ejercicio 1 -->
+        <li>
+          <h3>Filtrar productos con precios menores a un valor</h3>
+          <p>
+            <b>Contexto:</b> Mostrar productos en oferta (precio menor a 50).
+          </p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de precios [100,45,30,70,25].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.filter()</code> para filtrar precios &lt; 50.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>[45,30,25]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio1()">
+          Ejecutar Ejercicio 1
+        </button>
+        <div id="act1"></div>
+        <hr />
+
+        <!-- Ejercicio 2 -->
+        <li>
+          <h3>Desanidar listas de comentarios en un foro</h3>
+          <p><b>Contexto:</b> Obtener una lista plana de comentarios.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array anidado con comentarios.</p>
+              <ul type="square">
+                <li>Usa <code>Array.flat()</code> para descomponer niveles.</li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >["Buen post","Gracias","Interesante","No estoy de acuerdo","Muy
+                cierto","Concuerdo"]</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio2()">
+          Ejecutar Ejercicio 2
+        </button>
+        <div id="act2"></div>
+        <hr />
+
+        <!-- Ejercicio 3 -->
+        <li>
+          <h3>Procesamiento de datos de usuarios y asignación de etiquetas</h3>
+          <p><b>Contexto:</b> Crear un array plano con roles.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de objetos usuarios con roles.</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.flatMap()</code> para obtener etiquetas
+                  planas.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>["admin","editor","usuario","moderador","editor"]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio3()">
+          Ejecutar Ejercicio 3
+        </button>
+        <div id="act3"></div>
+        <hr />
+
+        <!-- Ejercicio 4 -->
+        <li>
+          <h3>Imprimir una lista de tareas pendientes</h3>
+          <p><b>Contexto:</b> Mostrar tareas una por una.</p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array de tareas ["Lavar platos","Comprar
+                comida","Hacer ejercicio"].
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.forEach()</code> para imprimir con índice.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >1. Lavar platos<br />2. Comprar comida<br />3. Hacer
+                ejercicio</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio4()">
+          Ejecutar Ejercicio 4
+        </button>
+        <div id="act4"></div>
+        <hr />
+
+        <!-- Ejercicio 5 -->
+        <li>
+          <h3>Generar una lista de precios con IVA aplicado</h3>
+          <p><b>Contexto:</b> Aplicar 21% de IVA a precios.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de precios [100,200,300].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.map()</code> para calcular precios con IVA.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>[121,242,363]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio5()">
+          Ejecutar Ejercicio 5
+        </button>
+        <div id="act5"></div>
+        <hr />
+
+        <!-- Ejercicio 6 -->
+        <li>
+          <h3>Filtrar usuarios activos en un sistema</h3>
+          <p><b>Contexto:</b> Obtener solo usuarios activos.</p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array de objetos usuarios con propiedad
+                activo.
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.filter()</code> para seleccionar activos.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >[{nombre:"Juan",activo:true},{nombre:"Pedro",activo:true}]</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio6()">
+          Ejecutar Ejercicio 6
+        </button>
+        <div id="act6"></div>
+        <hr />
+
+        <!-- Ejercicio 7 -->
+        <li>
+          <h3>Simplificación de listas de categorías de productos</h3>
+          <p><b>Contexto:</b> Obtener lista plana de categorías.</p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array anidado
+                ["Electrónica",["Teléfonos","Computadoras"],"Ropa"].
+              </p>
+              <ul type="square">
+                <li>Usa <code>Array.flat()</code> para descomponer.</li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>["Electrónica","Teléfonos","Computadoras","Ropa"]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio7()">
+          Ejecutar Ejercicio 7
+        </button>
+        <div id="act7"></div>
+        <hr />
+
+        <!-- Ejercicio 8 -->
+        <li>
+          <h3>Crear una lista de nombres en mayúsculas</h3>
+          <p><b>Contexto:</b> Convertir nombres a mayúsculas.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array ["juan","maría","pedro"].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.map()</code> para convertir a mayúsculas.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>["JUAN","MARÍA","PEDRO"]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio8()">
+          Ejecutar Ejercicio 8
+        </button>
+        <div id="act8"></div>
+        <hr />
+        <!-- Ejercicio 9 -->
+        <li>
+          <h3>Imprimir las cantidades de productos vendidos</h3>
+          <p>
+            <b>Contexto:</b> Necesitas imprimir en consola las cantidades de
+            productos vendidos.
+          </p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de cantidades [10,20,30,40].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.forEach()</code> para recorrer el array.
+                </li>
+                <li>Muestra cada cantidad junto con un mensaje.</li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>
+                Se vendieron 10 productos.<br />
+                Se vendieron 20 productos.<br />
+                Se vendieron 30 productos.<br />
+                Se vendieron 40 productos.
+              </code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio9()">
+          Ejecutar Ejercicio 9
+        </button>
+        <div id="act9"></div>
+        <hr />
+
+        <!-- Ejercicio 10 -->
+        <li>
+          <h3>Calcular el precio total de productos con descuento</h3>
+          <p><b>Contexto:</b> Aplicar un descuento del 10% a los precios.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de precios [50,100,150].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.map()</code> para calcular precios con
+                  descuento.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>[45,90,135]</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio10()">
+          Ejecutar Ejercicio 10
+        </button>
+        <div id="act10"></div>
+        <hr />
+      </ol>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

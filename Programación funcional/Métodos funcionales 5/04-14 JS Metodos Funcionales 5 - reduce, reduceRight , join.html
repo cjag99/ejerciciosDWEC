@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04-14 JS Metodos Funcionales 5 - reduce, reduceRight , join</title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">04/12/25</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <h1 class="titulo">
+        Práctica 04-14 JS Metodos Funcionales 5 - reduce, reduceRight , join
+      </h1>
+
+      <ol>
+        <!-- Ejercicio 1 -->
+        <li>
+          <h3>Sumar el total de ventas de un día</h3>
+          <p>
+            <b>Contexto:</b> Calcular el total de ventas realizadas en un día.
+          </p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de ventas [100,200,300,400].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.reduce()</code> para sumar todas las ventas.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>1000</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio1()">
+          Ejecutar Ejercicio 1
+        </button>
+        <div id="act1"></div>
+        <hr />
+
+        <!-- Ejercicio 2 -->
+        <li>
+          <h3>Concatenar nombres de empleados en orden inverso</h3>
+          <p>
+            <b>Contexto:</b> Concatenar nombres en orden inverso para un
+            informe.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array de empleados
+                ["Juan","María","Pedro","Luis"].
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.reduceRight()</code> para concatenar en orden
+                  inverso.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>"Luis Pedro María Juan"</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio2()">
+          Ejecutar Ejercicio 2
+        </button>
+        <div id="act2"></div>
+        <hr />
+
+        <!-- Ejercicio 3 -->
+        <li>
+          <h3>Contar la cantidad de productos en un inventario</h3>
+          <p><b>Contexto:</b> Calcular el total de productos.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de cantidades [5,10,20,15].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.reduce()</code> para sumar todas las
+                  cantidades.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>50</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio3()">
+          Ejecutar Ejercicio 3
+        </button>
+        <div id="act3"></div>
+        <hr />
+
+        <!-- Ejercicio 4 -->
+        <li>
+          <h3>Convertir una lista de palabras en una oración</h3>
+          <p><b>Contexto:</b> Unir palabras en una sola cadena.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array ["JavaScript","es","increíble"].</p>
+              <ul type="square">
+                <li>Usa <code>Array.join()</code> para unir con espacios.</li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>"JavaScript es increíble"</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio4()">
+          Ejecutar Ejercicio 4
+        </button>
+        <div id="act4"></div>
+        <hr />
+
+        <!-- Ejercicio 5 -->
+        <li>
+          <h3>Convertir un array de números a una cadena</h3>
+          <p><b>Contexto:</b> Convertir números a cadena separada por comas.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array [1,2,3,4,5].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.toString()</code> para convertir a cadena.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>"1,2,3,4,5"</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio5()">
+          Ejecutar Ejercicio 5
+        </button>
+        <div id="act5"></div>
+        <hr />
+
+        <!-- Ejercicio 6 -->
+        <li>
+          <h3>Mostrar una lista de precios en formato local</h3>
+          <p>
+            <b>Contexto:</b> Mostrar precios en formato local con símbolo de
+            moneda.
+          </p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array [1000,2000,3000].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.toLocaleString()</code> para convertir a
+                  formato local.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>"$1,000.00,$2,000.00,$3,000.00"</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio6()">
+          Ejecutar Ejercicio 6
+        </button>
+        <div id="act6"></div>
+        <hr />
+
+        <!-- Ejercicio 7 -->
+        <li>
+          <h3>Calcular el total de ingresos de un mes</h3>
+          <p><b>Contexto:</b> Sumar ingresos semanales.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array [500,1000,1500,2000].</p>
+              <ul type="square">
+                <li>Usa <code>Array.reduce()</code> para calcular el total.</li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>5000</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio7()">
+          Ejecutar Ejercicio 7
+        </button>
+        <div id="act7"></div>
+        <hr />
+
+        <!-- Ejercicio 8 -->
+        <li>
+          <h3>Crear un resumen de compras en orden inverso</h3>
+          <p><b>Contexto:</b> Listar productos en orden inverso.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array ["Manzana","Naranja","Plátano"].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.reduceRight()</code> para concatenar en orden
+                  inverso.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>"Plátano, Naranja, Manzana"</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio8()">
+          Ejecutar Ejercicio 8
+        </button>
+        <div id="act8"></div>
+        <hr />
+        <!-- Ejercicio 9 -->
+        <li>
+          <h3>Generar una cadena de números de un array</h3>
+          <p>
+            <b>Contexto:</b> Convertir una lista de números en una cadena para
+            fines de visualización.
+          </p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de números [10,20,30,40].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.toString()</code> para convertirlo en una
+                  cadena separada por comas.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>"10,20,30,40"</code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio9()">
+          Ejecutar Ejercicio 9
+        </button>
+        <div id="act9"></div>
+        <hr />
+
+        <!-- Ejercicio 10 -->
+        <li>
+          <h3>Mostrar precios en diferentes formatos locales</h3>
+          <p>
+            <b>Contexto:</b> Mostrar precios en dólares y euros usando formato
+            local.
+          </p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de precios [1000,1500,2000].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.toLocaleString()</code> para convertir los
+                  precios en formato de EE.UU. y Europa.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code>
+                ["$1,000.00","$1,500.00","$2,000.00"]<br />
+                ["1.000,00 €","1.500,00 €","2.000,00 €"]
+              </code>
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio10()">
+          Ejecutar Ejercicio 10
+        </button>
+        <div id="act10"></div>
+        <hr />
+      </ol>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      04-12 JS Metodos Funcionales 3 - includes,isArray,every ,some ,find
+      ,findLast ,findIndex ,findLastIndex,lastIndexOf
+    </title>
+    <style>
+      li,
+      thead,
+      .datosNombre {
+        font-weight: bold;
+      }
+      table,
+      th,
+      td {
+        border: solid black 1px;
+      }
+      .contenido {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+      .tablaNombre {
+        width: 100%;
+        background-color: orange;
+      }
+      .nombre {
+        display: flex;
+        justify-content: center;
+      }
+      .titulo {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="nombre">
+        <table class="tablaNombre">
+          <tr>
+            <td>Nombre: <span class="datosNombre">José Enrique</span></td>
+            <td>Curso: <span class="datosNombre">2º DAW</span></td>
+          </tr>
+          <tr>
+            <td>Apellidos: <span class="datosNombre">Aguilar Ramos</span></td>
+            <td>Fecha: <span class="datosNombre">04/12/25</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <h1 class="titulo">
+        Práctica 04-12 JS Metodos Funcionales 3 - includes,isArray,every ,some
+        ,find ,findLast ,findIndex ,findLastIndex,lastIndexOf
+      </h1>
+
+      <ol>
+        <!-- Ejercicio 1 -->
+        <li>
+          <h3>Verificación de productos en un inventario</h3>
+          <p>
+            <b>Contexto:</b> Tienes un inventario de productos y quieres
+            verificar si un producto específico está en stock.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array con productos
+                ["manzana","naranja","plátano","pera"].
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.includes()</code> para verificar si "naranja"
+                  está en el inventario.
+                </li>
+                <li>
+                  Usa <code>Array.includes()</code> desde índice 2 para
+                  comprobar si "mango" está en el inventario.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >true // "naranja" está en el inventario<br />
+                false // "mango" no está en el inventario desde el índice
+                2</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio1()">
+          Ejecutar Ejercicio 1
+        </button>
+        <div id="act1"></div>
+        <hr />
+
+        <!-- Ejercicio 2 -->
+        <li>
+          <h3>Verificar si una variable es un array</h3>
+          <p>
+            <b>Contexto:</b> Necesitas asegurarte de que ciertas variables sean
+            arrays.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Variable <code>data</code> que puede ser
+                array o no.
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.isArray()</code> para verificar si es un
+                  array.
+                </li>
+                <li>
+                  Si es array, recórrelo y muestra los elementos; si no, muestra
+                  error.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >const data = [1,2,3];<br />
+                Array.isArray(data); // true</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio2()">
+          Ejecutar Ejercicio 2
+        </button>
+        <div id="act2"></div>
+        <hr />
+
+        <!-- Ejercicio 3 -->
+        <li>
+          <h3>Validación de formularios</h3>
+          <p><b>Contexto:</b> Verificar si todos los campos están completos.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de campos [true,true,false,true].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.every()</code> para comprobar si todos están
+                  completos.
+                </li>
+                <li>Si alguno está vacío, muestra advertencia.</li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >const campos = [true,true,false,true];<br />
+                campos.every(campo => campo); // false</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio3()">
+          Ejecutar Ejercicio 3
+        </button>
+        <div id="act3"></div>
+        <hr />
+
+        <!-- Ejercicio 4 -->
+        <li>
+          <h3>Verificación de permisos de usuarios</h3>
+          <p>
+            <b>Contexto:</b> Comprobar si al menos un usuario tiene permisos.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array de permisos [false,false,true,false].
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.some()</code> para verificar si alguno tiene
+                  permisos.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >const permisos = [false,false,true,false];<br />
+                permisos.some(permiso => permiso); // true</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio4()">
+          Ejecutar Ejercicio 4
+        </button>
+        <div id="act4"></div>
+        <hr />
+
+        <!-- Ejercicio 5 -->
+        <li>
+          <h3>Encontrar el primer producto con stock bajo</h3>
+          <p>
+            <b>Contexto:</b> Buscar el primer producto con stock menor a 10.
+          </p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de stock [15,7,25,5].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.find()</code> para encontrar el primero &lt;
+                  10.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >const stock = [15,7,25,5];<br />
+                stock.find(cantidad => cantidad < 10); // 7</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio5()">
+          Ejecutar Ejercicio 5
+        </button>
+        <div id="act5"></div>
+        <hr />
+
+        <!-- Ejercicio 6 -->
+        <li>
+          <h3>Encontrar el último pedido urgente</h3>
+          <p><b>Contexto:</b> Buscar el último pedido con prioridad "alta".</p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array de prioridades
+                ["baja","media","alta","baja"].
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.findLast()</code> para encontrar el último
+                  "alta".
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >const prioridades = ["baja","media","alta","baja"];<br />
+                prioridades.findLast(p => p==="alta"); // "alta"</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio6()">
+          Ejecutar Ejercicio 6
+        </button>
+        <div id="act6"></div>
+        <hr />
+
+        <!-- Ejercicio 7 -->
+        <li>
+          <h3>Encontrar el índice del primer producto en oferta</h3>
+          <p><b>Contexto:</b> Buscar el índice del primer producto &lt; 50.</p>
+          <ol>
+            <li>
+              <p><b>Descripción:</b> Array de precios [100,50,30,150].</p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.findIndex()</code> para encontrar el índice.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >const precios = [100,50,30,150];<br />
+                precios.findIndex(p => p < 50); // 2</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio7()">
+          Ejecutar Ejercicio 7
+        </button>
+        <div id="act7"></div>
+        <hr />
+        <!-- Ejercicio 8 -->
+        <li>
+          <h3>Encontrar el índice del último cliente VIP</h3>
+          <p>
+            <b>Contexto:</b> Necesitas encontrar el índice del último cliente
+            VIP en una lista.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array de clientes
+                ["regular","VIP","regular","VIP"].
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.findLastIndex()</code> para localizar el
+                  último "VIP".
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >const clientes = ["regular","VIP","regular","VIP"];<br />
+                clientes.findLastIndex(c => c==="VIP"); // 3</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio8()">
+          Ejecutar Ejercicio 8
+        </button>
+        <div id="act8"></div>
+        <hr />
+
+        <!-- Ejercicio 9 -->
+        <li>
+          <h3>Búsqueda del índice de un producto específico</h3>
+          <p>
+            <b>Contexto:</b> Encontrar la posición de un producto en la lista.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array de productos
+                ["manzana","naranja","plátano"].
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.indexOf()</code> para localizar "plátano".
+                </li>
+                <li>
+                  Usa <code>Array.lastIndexOf()</code> para localizar el último
+                  "manzana".
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >const productos = ["manzana","naranja","plátano"];<br />
+                productos.indexOf("plátano"); // 2<br />
+                productos.lastIndexOf("manzana"); // 0</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio9()">
+          Ejecutar Ejercicio 9
+        </button>
+        <div id="act9"></div>
+        <hr />
+
+        <!-- Ejercicio 10 -->
+        <li>
+          <h3>Validación de usuarios con un tipo específico</h3>
+          <p>
+            <b>Contexto:</b> Verificar si existe un administrador en la lista de
+            usuarios.
+          </p>
+          <ol>
+            <li>
+              <p>
+                <b>Descripción:</b> Array de roles
+                ["usuario","usuario","admin","moderador"].
+              </p>
+              <ul type="square">
+                <li>
+                  Usa <code>Array.includes()</code> para comprobar si hay un
+                  "admin".
+                </li>
+                <li>
+                  Usa <code>Array.some()</code> para verificar si al menos uno
+                  es "admin".
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Resultado esperado:</b><br />
+              <code
+                >const roles = ["usuario","usuario","admin","moderador"];<br />
+                roles.includes("admin"); // true<br />
+                roles.some(r => r==="admin"); // true</code
+              >
+            </li>
+          </ol>
+        </li>
+        <button type="button" onclick="ejercicio10()">
+          Ejecutar Ejercicio 10
+        </button>
+        <div id="act10"></div>
+        <hr />
+      </ol>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
